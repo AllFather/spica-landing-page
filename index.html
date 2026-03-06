@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spica Studio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg py-3 fixed-top" id="navheader">
+  <div class="container">
+    <a class="navbar-brand">
+      <img src="multimedia/img/logo/logo_spica.png" alt="Spica Logo" class="navbar-logo" href="#navheader"
+        data-logo-light="multimedia/img/logo/logo_spica.png" data-logo-dark="multimedia/img/logo/logo_spica_negro.png">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav mx-auto gap-3 transition-custom">
+        <li class="nav-item"><a class="nav-link" href="#ads">Google / Meta Ads with AI</a></li>
+        <li class="nav-item"><a class="nav-link" href="#design">Design</a></li>
+        <li class="nav-item"><a class="nav-link" href="#socialmedia">Social Media</a></li>
+      </ul>
+      <div class="nav-btns">
+      <a href="#faq" class="btn btn-navbar btn-sm me-2 px-2">FAQ</a>
+      <a href="#services" class="btn btn-navbar btn-sm me-2">Services
+      <a href="#contact" class="btn btn-navbar btn-sm" style="background-color: grey; color: white; border: none;">
+        Contact Us</a>
+    </div>
+    </div>  
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="object-fit-contain hero-bg">
+  <video autoplay muted playsinline preload="metadata" id="hero-video">
+    <source src="multimedia/animaciones/mp4/hero_video_bg.mp4" type="video/mp4">
+  </video>
+  <div class="container position-relative">
+    <div class="row vh-100 align-items-end pb-5 text-center">
+        <div class="col-lg-12">
+            <p class="fs-3 fw-bold mb-0 p-custom" style="color: white;">WELCOME</p>
+            <p class="lead p-custom" style="color: white;">
+              Togheter, creating the path to perfect campaigns
+            </p>
+            <a href="#contactForm" class="btn btn-custom">Contact Us</a>
+            <p class="mt-1 fs-6 fw-lighter p-custom" style="color: white;">From $650</p>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section-padding">
+  <div class="container">
+    <div class="row mb-5 text-center reveal">
+      <div class="col-lg-12">
+        <h2 class="fw-bold display-4 reveal">Let´s build a strong visual brand</h2>
+        <p class="pservices reveal">We help brands grow through powerful ads with AI, creative content and <br>
+             smart design that connect stragety with emotion to drive real results
+        </p>
+      </div>
+    </div>
+    <div class="ratio ratio-container ratio-16x9 position-relative reveal">
+      <video muted playsinline preload="metadata" id="video1" class="object-fit-cover">
+          <source src="multimedia/animaciones/video del logo dibujado.mp4" type="video/mp4">
+      </video>
+      <div class="position-absolute">
+        <button id="playbtn" class="btn btnplaycustom d-flex align-items-center justify-content-center gap-2">
+          <i class="bi bi-play-fill fs-2"></i>
+           <span>Watch the video</span>
+        </button>
+      </div>
+    </div>
+    <div class="row g-4 pt-5 reveal">
+      <div class="col-md-4 text-center pt-5">
+        <img src="multimedia/img/iconos/StrategicPerformance.svg" alt="strategic performance" class="icons">
+        <h6 class="fw-bold">Stragetic Performance</h6>
+        <p class="pt-2">Performance driven campaigns <br> that convert and grow</p>
+      </div>
+      <div class="col-md-4 text-center pt-5">
+        <img src="multimedia/img/iconos/SeamlessExperience.svg" alt="seamless experience" class="icons">
+        <h6 class="fw-bold">Seamless Experience</h6>
+        <p class="pt-2">Visual identities that captivate, <br> desing to leave a trace</p>
+      </div>
+      <div class="col-md-4 text-center pt-5">
+        <img src="multimedia/img/iconos/CreativeImpact.svg" alt="creative impact" class="icons">
+        <h6 class="fw-bold">Creative Impact</h6>
+        <p class="pt-2">Engaging stories that connect <br> and inspire audiences</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULT -->
+<section id="results" class="section-padding">
+  <div class="container">
+    <div class="row vh-100 d-flex justify-content-betweeen pb-5 text-center reveal">
+        <div class="col-lg-12">
+            <a href="#" class="btn btn-ads">Google / Meta Ads with AI</a>
+        </div>
+        <div class="col-lg-12 align-self-end">
+          <h2 class="display-1 fw-bold p-custom">All About Results</h2>
+          <p class="fs-2 p-custom">In 3 months creativity will flourish like never before. Ideas <br>
+            will evolve, visuals will refine, and your brand will start to <br>
+            feel alive again
+          </p>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADS -->
+<section id="ads" class="pt-5">
+  <div class="container">
+    <div class="row mb-5 text-center">
+      <div class="col-lg-12">
+        <p style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); color:blueviolet;" class="reveal">Google/Meta Ads with AI</p>
+        <h2 class="fw-bold display-4 reveal">Smart and Purposeful</h2>
+        <p class="pservices reveal">Our work system is built around a skilled team focused on growth through precision, <br>
+            creativity, and data intelligence. Every action, from ad setup to optimization, is designed to <br>
+            attract high-quality leads and turn them into real results.
+        </p>
+      </div>
+    </div>
+    <div class="ratio ratio-container ratio-16x9 position-relative reveal">
+      <video muted playsinline preload="metadata" id="video2" class="object-fit-cover">
+          <source src="multimedia/animaciones/video de edicion de video.mp4" type="video/mp4">
+      </video>
+      <div class="position-absolute">
+        <button id="playbtn2" class="btn btnplaycustom d-flex align-items-center justify-content-center gap-2">
+          <i class="bi bi-play-fill fs-2"></i>
+           <span>Watch the video</span>
+        </button>
+      </div>
+    </div>
+    <div class="row g-4 pt-5 reveal">
+      <div class="col-md-3 text-center pt-5">
+        <img src="multimedia/img/iconos/Focused.svg" alt="focused" class="icons">
+        <h6 class="fw-bold pt-">Focused</h6>
+        <p>Every campaign is structured<br> around your goals, maximizing <br>
+          reach and conversion from day <br>one  
+        </p>
+      </div>
+      <div class="col-md-3 text-center pt-5">
+        <img src="multimedia/img/iconos/Adaptive.svg" alt="adaptive" class="icons">
+        <h6 class="fw-bold pt-3">Adaptive</h6>
+        <p>Continuous optimization through<br> real-time data and A/B testing  <br>
+          for stronger performance
+        </p>
+      </div>
+      <div class="col-md-3 text-center pt-5">
+        <img src="multimedia/img/iconos/Efﬁcient.svg" alt="efficient" class="icons">
+        <h6 class="fw-bold pt-3">Efficient</h6>
+        <p>Smart budget allocation and <br> automation tools to make every <br>
+          dollar work harder 
+        </p>
+      </div>
+      <div class="col-md-3 text-center pt-5">
+        <img src="multimedia/img/iconos/Connected.svg" alt="connected" class="icons">
+        <h6 class="fw-bold pt-3">Connected</h6>
+        <p>We use AI to filter and qualify<br> the best leads for smarter, faster  <br>
+          decisions
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="ratio ratio-16x9 position-relative reveal">
+      <video muted id="video3" autoplay loop playsinline preload="metadata">
+          <source src="multimedia/animaciones/mp4/Movimiento A.mp4" type="video/mp4">
+      </video>
+    </div>
+</section>
+
+<!-- DESIGN -->
+<section id="design">
+  <div class="container">
+    <div class="row mb-5 text-center">
+      <div class="col-lg-12">
+        <p style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); color:blueviolet;" class="reveal">Design</p>
+        <h2 class="fw-bold display-4 reveal">Created for Connection</h2>
+        <p class="pservices reveal">We design visual identities that reflect who you are and speak directly to your audience. <br>
+            Whether it’s a logo that stays in their minds or a website/App that drives results, we make <br>
+            it real.
+        </p>
+      </div>
+    </div>
+    <div class="ratio ratio-container ratio-16x9 position-relative reveal">
+      <video muted playsinline preload="metadata" id="video4" class="object-fit-cover">
+          <source src="multimedia/animaciones/video de edicion de video.mp4" type="video/mp4">
+      </video>
+      <div class="position-absolute">
+        <button id="playbtn4" class="btn btnplaycustom d-flex align-items-center justify-content-center gap-2">
+          <i class="bi bi-play-fill fs-2"></i>
+           <span>Watch the video</span>
+        </button>
+      </div>
+    </div>
+    <div class="row g-4 pt-5 reveal">
+      <div class="col-md-3 text-center pt-5">
+        <img src="multimedia/img/iconos/Identity.svg" alt="identity" class="icons">
+        <h6 class="fw-bold">Identity</h6>
+        <p>We create the core of your brand<br> from its voice and vision to the <br>
+          visual system that defines how it <br>lives, feels, and connects 
+        </p>
+      </div>
+      <div class="col-md-3 text-center pt-5">
+        <img src="multimedia/img/iconos/Style.svg" alt="style" class="icons">
+        <h6 class="fw-bold">Style</h6>
+        <p>Defined visual languages that<br>keep your brand cohesive across <br>
+          every platform, touchpoint, and <br> asset
+        </p>
+      </div>
+      <div class="col-md-3 text-center pt-5">
+        <img src="multimedia/img/iconos/Web.svg" alt="web" class="icons">
+        <h6 class="fw-bold">Web</h6>
+        <p>Custom websites designed to <br> convert & blending clean UI, <br>
+          strategic UX, and storytelling <br>that feels true to your brand 
+        </p>
+      </div>
+      <div class="col-md-3 text-center pt-5">
+        <img src="multimedia/img/iconos/Build.svg" alt="build" class="icons">
+        <h6 class="fw-bold">Build</h6>
+        <p>High-performance builds in <br> WordPress or custom code, <br>
+           turning great design into fast, <br> scalable digital products
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL MEDIA -->
+<section id="socialmedia" class="section-padding">
+  <div class="container">
+    <div class="row mb-5 text-center">
+      <div class="col-lg-12">
+        <p style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); color:blueviolet;" class="reveal">Social Media</p>
+        <h2 class="fw-bold display-4 reveal">Built for Impact</h2>
+        <p class="pservices reveal">We create trend-driven video narratives rooted in your brand’s essence and goals. <br>
+            This ensures strong engagement and based on your objective either reaching the right <br>
+            audience or going viral.
+        </p>
+      </div>
+    </div>
+    <div class="ratio ratio-container ratio-16x9 position-relative reveal">
+      <video muted playsinline preload="metadata" id="video5" class="object-fit-cover">
+          <source src="multimedia/animaciones/video de edicion de video.mp4" type="video/mp4">
+      </video>
+      <div class="position-absolute">
+        <button id="playbtn5" class="btn btnplaycustom d-flex align-items-center justify-content-center gap-2">
+          <i class="bi bi-play-fill fs-2"></i>
+           <span>Watch the video</span>
+        </button>
+      </div>
+    </div>
+    <div class="row g-4 pt-5 reveal">
+      <div class="col-md-4 text-center pt-5">
+        <img src="multimedia/img/iconos/Video.svg" alt="video" class="icons">
+        <h6 class="fw-bold">Video</h6>
+        <p>We create trend-driven narratives rooted <br> in your brand’s essence, ensuring strong <br>
+          engagement and the right kind of <br>reach—strategic or vira
+        </p>
+      </div>
+      <div class="col-md-4 text-center pt-5">
+        <img src="multimedia/img/iconos/Stories.svg" alt="stories" class="icons">
+        <h6 class="fw-bold">Stories</h6>
+        <p>From concept to final cut, we build videos<br>that capture attention, reflect your brand, <br>
+          and perform across every platform.
+        </p>
+      </div>
+      <div class="col-md-4 text-center pt-5">
+        <img src="multimedia/img/iconos/Impact.svg" alt="impact" class="icons">
+        <h6 class="fw-bold">Impact</h6>
+        <p>Focused, goal-driven video content <br> designed to boost visibility, drive <br>
+          engagement, and connect with the <br>audience that matters. 
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="row pb-5">
+        <div class="col-lg-12 text-center">
+            <p class="fs-3 fw-bold mb-0 p-custom reveal" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">DESIGN. CODE. STORY.</p>
+            <p class="lead p-custom reveal" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
+             Cohesive brands and digital experiences that actually work.
+            </p>
+        <div class=" row pt-3 justify-content-center">
+          <div class="col-auto reveal">
+              <button data-bs-toggle="modal" data-bs-target="#faqModal" class="btn btn-custom1">FAQ</button>
+          </div>
+          <div class="col-auto reveal">
+              <button href="#contact" class="btn btn-custom2">Contact Us</button>
+          </div>
+        </div>
+            <p class="pt-3 fs-6 fw-lighter p-custom reveal">From $950</p>
+        </div>
+    </div>
+  </div>
+  <div class="portada">
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section  id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 text-start pb-5 reveal">
+      <img src="multimedia/img/logo/logo_spica_negro.png" alt="Spica Logo" class="navbar-logo">
+      </div>
+      <div class="col-md-6 reveal">
+          <h2 class="fw-bold fs-3">Communication Channel</h2>
+      <div>
+        <ul class="list-unstyled ">
+          <li class="pt-2">Email: cesarg@spicastudio.art</li>
+          <li class="pt-2">US Number (iMessage): +1 (657) 570-9278</li>
+          <li class="pt-2">PE Number (WhatsApp): +51 936 161 337</li>
+          <li class="pt-2">AR Number (WhatsApp & iMessage): +54 9 11 7621-4901</li>
+        </ul>
+      </div>
+      </div>
+    </div>
+</section>
+
+<!-- CONTACT FORM-->
+<section class="video-section position-relative">
+  <video class="bg-video" autoplay loop muted playsinline preload="metadata">
+    <source src="multimedia/animaciones/Video W del cafe.mp4" type="video/mp4">
+  </video>
+  <div class="container position-relative">
+    <div class="row align-items-center min-vh-100 py-5">
+      
+      <div class="col-md-8 text-white">
+        <h2 class="fw-bold display-5 reveal">Get in touch</h2>
+      </div>
+
+      <div class="col-md-4">
+        <form id="contactForm">
+            <div class="row reveal">
+                    <div class="col-md-12 pb-5">
+                      <input type="text" name="name" class="form-control" placeholder="Name" required>
+                    </div>
+                    <div class="col-md-12 pb-5">
+                      <input type="email" name="email" class="form-control" placeholder="Email address" required>
+                    </div>
+                    <div class="col-md-12 pb-5">
+                      <input type="text" name="phone" class="form-control" placeholder="Phone number (optional)">
+                    </div>
+                    <div class="col-md-12 pb-5">
+                      <select id="inputState" class="form-select form-control" required name="country" placeholder="Country">
+                        <option class="form-control" disabled selected>Country</option>
+                        <option class="form-control">Argentina</option>
+                        <option class="form-control">Perú</option>
+                        <option class="form-control">United States</option>
+                        <option class="form-control">Europa</option>
+                      </select>
+                    </div>
+                    <div class="col-md-12 pb-5">
+                      <textarea name="message" class="form-control" rows="4" placeholder="Message" required></textarea>
+                    </div>
+                    <div class="col-md-12 pt-5">
+                      <button type="submit" class="btn btn-submit w-100">Submit</button>
+                    </div>
+            </div>
+            <p class="text-center terms pt-2">
+              By clicking "Submit", you authorize Spica Studio to notify you about exclusive
+              events,service updates, and company news.
+            </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- FOOTER -->
+<footer class="py-4">
+  <div class="container text-center">
+    <p class="mb-0">© 2026 Spica Studio</p>
+  </div>
+</footer>
+<a href="#" class="btn-back-to-top" id="btnToTop">
+  <i class="bi bi-arrow-up"></i> 
+</a>
+
+<!-- POP UP FAQ -->
+<div class="modal fade" id="faqModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <!-- HEADER -->
+      <div class="modal-header row">
+        <button type="button" class="btn-close col-md-12 pt-3" data-bs-dismiss="modal"></button>
+        <h5 class="modal-title fw-bold text-center col-md-12">FAQ</h5>
+      </div>
+
+      <!-- BODY -->
+      <div class="modal-body">
+        <div class="accordion accordion-flush">
+          <div class="accordion-item pb-4">
+             <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse1" aria-expanded="false" aria-controls="flush-collapse1">
+                What services do you offer?
+              </button>
+              </h2>
+              <div id="flush-collapse1" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <p>
+                    We provide Google & Meta Ads, AI-powered campaigns, branding,
+                    web design, and social media content focused on performance.
+                  </p>
+                </div>
+              </div>
+          </div>
+          <div class="accordion-item pb-4">
+             <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse2" aria-expanded="false" aria-controls="flush-collapse2">
+                Is there a minimum contract?
+              </button>
+            </h2>
+            <div id="flush-collapse2" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                <p>
+                  No. Your selection starts a conversation, not a contract.
+                  You can cancel anytime.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JS -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
