@@ -91,23 +91,23 @@ btnPlay.addEventListener('click', () => {
   video.setAttribute('controls', 'true');
 });
 
-const video2 = document.getElementById('video2');
-const btnPlay2 = document.getElementById ('playbtn2');
+// const video2 = document.getElementById('video2');
+// const btnPlay2 = document.getElementById ('playbtn2');
 
-btnPlay2.addEventListener('click', () => {
-  video2.play();
-  btnPlay2.parentElement.style.display = 'none';
-  video2.setAttribute('controls', 'true');
-});
+// btnPlay2.addEventListener('click', () => {
+//   video2.play();
+//   btnPlay2.parentElement.style.display = 'none';
+//   video2.setAttribute('controls', 'true');
+// });
 
-const video4 = document.getElementById('video4');
-const btnPlay4 = document.getElementById ('playbtn4');
+// const video4 = document.getElementById('video4');
+// const btnPlay4 = document.getElementById ('playbtn4');
 
-btnPlay4.addEventListener('click', () => {
-  video4.play();
-  btnPlay4.parentElement.style.display = 'none';
-  video4.setAttribute('controls', 'true');
-});
+// btnPlay4.addEventListener('click', () => {
+//   video4.play();
+//   btnPlay4.parentElement.style.display = 'none';
+//   video4.setAttribute('controls', 'true');
+// });
 
 const video5 = document.getElementById('video5');
 const btnPlay5 = document.getElementById ('playbtn5');
@@ -117,6 +117,7 @@ btnPlay5.addEventListener('click', () => {
   btnPlay5.parentElement.style.display = 'none';
   video5.setAttribute('controls', 'true');
 });
+
 
 document.getElementById("contactForm").addEventListener("submit", function (e) {
   e.preventDefault();
@@ -149,3 +150,79 @@ window.onscroll = function() {
     btn.style.display = "none";
   }
 };
+
+
+const track = document.querySelector(".carousel-track")
+
+let slides = document.querySelectorAll(".card-slide")
+
+const firstClone = slides[0].cloneNode(true)
+const lastClone = slides[slides.length-1].cloneNode(true)
+
+track.appendChild(firstClone)
+track.prepend(lastClone)
+
+slides = document.querySelectorAll(".card-slide")
+
+let index = 1
+
+function update(){
+
+slides.forEach(s=>s.classList.remove("active"))
+slides[index].classList.add("active")
+
+const slideWidth = slides[0].offsetWidth + 50
+
+const centerOffset =
+(track.offsetWidth / 2) -
+(slideWidth / 2)
+
+track.style.transform =
+`translateX(${centerOffset - index * slideWidth}px)`
+
+}
+
+update()
+
+function next(){
+
+index++
+track.style.transition=".7s"
+
+update()
+
+}
+
+setInterval(next,3500)
+
+track.addEventListener("transitionend",()=>{
+
+if(slides[index].isEqualNode(firstClone)){
+
+track.style.transition="none"
+index = 1
+update()
+
+}
+
+if(slides[index].isEqualNode(lastClone)){
+
+track.style.transition="none"
+index = slides.length-2
+update()
+
+}
+
+})
+
+const carousel = document.getElementById("servicesCarousel")
+const categorySpan = document.querySelector(".carousel-category")
+
+carousel.addEventListener("slid.bs.carousel", function (event) {
+
+  const activeSlide = event.relatedTarget
+  const newCategory = activeSlide.dataset.category
+
+  categorySpan.textContent = newCategory
+
+})
