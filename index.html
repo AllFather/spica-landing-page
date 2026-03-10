@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Spica Studio</title>
 
   <!-- Google Font -->
@@ -29,6 +29,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="nav">
+      <button class="nav-close-btn" id="navCloseBtn" aria-label="Cerrar menú">&times;</button>
       <ul class="navbar-nav mx-auto gap-3 transition-custom">
         <li class="nav-item"><a class="nav-link" href="#ads">Google / Meta Ads with AI</a></li>
         <li class="nav-item"><a class="nav-link" href="#design">Design</a></li>
@@ -57,7 +58,7 @@
               Togheter, creating the path to perfect campaigns
             </p>
             <a href="#contactForm" class="btn btn-custom">Contact Us</a>
-            <p class="mt-1 fs-6 fw-lighter p-custom" style="color: white;">From $650</p>
+            <p class="mt-1 fs-6 fw-lighter p-custom" style="color: white;">From $850</p>
         </div>
     </div>
   </div>
@@ -69,37 +70,49 @@
     <div class="row mb-5 text-center reveal">
       <div class="col-lg-12">
         <h2 class="fw-bold display-4 reveal">Let´s build a strong visual brand</h2>
-        <p class="pservices reveal">We help brands grow through powerful ads with AI, creative content and <br>
+        <p class="pservices reveal">We help brands grow through powerful ads with AI, creative content and
              smart design that connect stragety with emotion to drive real results
         </p>
       </div>
     </div>
     <div class="ratio ratio-container ratio-16x9 position-relative reveal">
-      <video muted playsinline preload="metadata" id="video1" class="object-fit-cover">
+      <video autoplay loop muted playsinline preload="metadata" id="video1" class="object-fit-cover">
           <source src="multimedia/animaciones/video del logo dibujado.mp4" type="video/mp4">
       </video>
-      <div class="position-absolute">
+      <!-- <div class="position-absolute">
         <button id="playbtn" class="btn btnplaycustom d-flex align-items-center justify-content-center gap-2">
           <i class="bi bi-play-fill fs-2"></i>
            <span>Watch the video</span>
         </button>
-      </div>
+      </div> -->
     </div>
     <div class="row g-4 pt-5 reveal">
       <div class="col-md-4 text-center pt-5">
-        <img src="multimedia/img/iconos/StrategicPerformance.svg" alt="strategic performance" class="icons">
-        <h6 class="fw-bold">Stragetic Performance</h6>
-        <p class="pt-2">Performance driven campaigns <br> that convert and grow</p>
+        <div class="service-item">
+          <img src="multimedia/img/iconos/StrategicPerformance.svg" alt="strategic performance" class="icons">
+          <div class="service-text">
+            <h6 class="fw-bold">Stragetic Performance</h6>
+            <p class="pt-2">Performance driven campaigns that convert and grow.</p>
+          </div>
+        </div>
       </div>
       <div class="col-md-4 text-center pt-5">
-        <img src="multimedia/img/iconos/SeamlessExperience.svg" alt="seamless experience" class="icons">
-        <h6 class="fw-bold">Seamless Experience</h6>
-        <p class="pt-2">Visual identities that captivate, <br> desing to leave a trace</p>
+        <div class="service-item">
+          <img src="multimedia/img/iconos/SeamlessExperience.svg" alt="seamless experience" class="icons">
+          <div class="service-text">
+            <h6 class="fw-bold">Seamless Experience</h6>
+            <p class="pt-2">Visual identities that captivate, desing to leave a trace.</p>
+          </div>
+        </div>
       </div>
       <div class="col-md-4 text-center pt-5">
-        <img src="multimedia/img/iconos/CreativeImpact.svg" alt="creative impact" class="icons">
-        <h6 class="fw-bold">Creative Impact</h6>
-        <p class="pt-2">Engaging stories that connect <br> and inspire audiences</p>
+        <div class="service-item">
+          <img src="multimedia/img/iconos/CreativeImpact.svg" alt="creative impact" class="icons">
+          <div class="service-text">
+            <h6 class="fw-bold">Creative Impact</h6>
+            <p class="pt-2">Engaging stories that connect and inspire audiences.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -120,7 +133,7 @@
   <div class="carousel-inner">
     <!-- slide 1 -->
     <div class="carousel-item active" data-category="Google / Meta Ads with AI">
-      <img src="multimedia/img/slide1.png" class="d-block w-100">
+      <img src="multimedia/img/slide1.png" class="d-block w-100 img-fluid">
       <div class="carousel-caption">
         <h3 class="custom-caption">All About Results</h3>
         <p class="caption-p">
@@ -161,14 +174,14 @@
 </section>
 
 <!-- ADS -->
-<section id="ads" class="pt-5">
+<section id="ads" class="pt-5 pb-5">
   <div class="container">
-    <div class="row mb-5 text-center">
+    <div class="row mt-5 mb-5 text-center">
       <div class="col-lg-12">
         <p style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); color:blueviolet;" class="reveal">Google/Meta Ads with AI</p>
         <h2 class="fw-bold display-4 reveal">Smart and Purposeful</h2>
-        <p class="pservices reveal">Our work system is built around a skilled team focused on growth through precision, <br>
-            creativity, and data intelligence. Every action, from ad setup to optimization, is designed to <br>
+        <p class="pservices reveal">Our work system is built around a skilled team focused on growth through precision,
+            creativity, and data intelligence. Every action, from ad setup to optimization, is designed to
             attract high-quality leads and turn them into real results.
         </p>
       </div>
@@ -184,91 +197,74 @@
         </button>
       </div>
     </div> -->
-    <div class="video-preview">
-        <button class="video-btn-custom">
-          <i class="bi bi-play-fill fs-2"></i>
-           <span>Watch the video</span>
-        </button>
+    <div class="video-preview img-fluid reveal">
     </div>
     <div class="row g-4 pt-5 reveal">
       <div class="col-md-3 text-center pt-5">
-        <img src="multimedia/img/iconos/Focused.svg" alt="focused" class="icons">
-        <h6 class="fw-bold pt-">Focused</h6>
-        <p>Every campaign is structured<br> around your goals, maximizing <br>
-          reach and conversion from day <br>one  
-        </p>
+        <div class="service-item">
+          <img src="multimedia/img/iconos/Focused.svg" alt="focused" class="icons">
+          <div class="service-text">
+            <h6 class="fw-bold">Focused</h6>
+            <p>Every campaign is built around a clear, specific goal to ensure we attract the right audience and drive real results.</p>
+          </div>
+        </div>
       </div>
       <div class="col-md-3 text-center pt-5">
-        <img src="multimedia/img/iconos/Adaptive.svg" alt="adaptive" class="icons">
-        <h6 class="fw-bold pt-3">Adaptive</h6>
-        <p>Continuous optimization through<br> real-time data and A/B testing  <br>
-          for stronger performance
-        </p>
+        <div class="service-item">
+          <img src="multimedia/img/iconos/Adaptive.svg" alt="adaptive" class="icons">
+          <div class="service-text">
+            <h6 class="fw-bold">Adaptive</h6>
+            <p>Continuous optimization through real-time data and A/B testing 
+              for stronger performance.
+            </p>
+          </div>
+        </div>
       </div>
       <div class="col-md-3 text-center pt-5">
-        <img src="multimedia/img/iconos/Efﬁcient.svg" alt="efficient" class="icons">
-        <h6 class="fw-bold pt-3">Efficient</h6>
-        <p>Smart budget allocation and <br> automation tools to make every <br>
-          dollar work harder 
-        </p>
+        <div class="service-item">
+          <img src="multimedia/img/iconos/Efﬁcient.svg" alt="efficient" class="icons">
+          <div class="service-text">
+            <h6 class="fw-bold pt-3">Efficient</h6>
+            <p>Smart budget allocation and automation tools to make every 
+            dollar work harder.
+          </p>
+        </div>
+        </div>
       </div>
       <div class="col-md-3 text-center pt-5">
-        <img src="multimedia/img/iconos/Connected.svg" alt="connected" class="icons">
-        <h6 class="fw-bold pt-3">Connected</h6>
-        <p>We use AI to filter and qualify<br> the best leads for smarter, faster  <br>
-          decisions
-        </p>
+        <div class="service-item">
+          <img src="multimedia/img/iconos/Connected.svg" alt="connected" class="icons">
+          <div class="service-text">
+            <h6 class="fw-bold pt-3">Connected</h6>
+            <p>We use AI to filter and qualify the best leads for smarter, faster
+              decisions.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 </section>
 
-<section class="team-carousel-section py-5">
-  <div class="carousel-wrapper">
-    <div class="carousel-track">
-
-      <div class="card-slide">
-        <img src="multimedia/img/slide4.png">
-        <div class="slide-caption">
-           <h5>Targeted Reach</h5>
-        </div>
-      </div>
-
-      <div class="card-slide">
-        <img src="multimedia/img/slide5.png">
-        <div class="slide-caption">
-          <h5>Smart Growth</h5>
-        </div>
-      </div>
-
-      <div class="card-slide">
-        <img src="multimedia/img/slide6.png">
-        <div class="slide-caption d-flex align-items-center justify-content-center">
-          <h5>Optimized Performance + AI</h5>
-        </div>
-      </div>
-
-      <div class="card-slide">
-        <img src="multimedia/img/slide7.png">
-        <div class="slide-caption">
-          <h5>Human Precision</h5>
-        </div>
-      </div>
+<section class="carousel-section py-5">
+  <div class="carousel-viewport" id="carouselViewport">
+    <div class="carousel-track" id="carouselTrack">
+      <!-- Slides injected by JS -->
     </div>
   </div>
+  <div class="carousel-dots" id="carouselDots"></div>
 </section>
 
 <!-- DESIGN -->
 <section id="design" class="pt-5">
   <div class="container">
-    <div class="row mb-5 text-center">
+    <div class="row mt-5 mb-5 text-center">
       <div class="col-lg-12">
         <p style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); color:blueviolet;" class="reveal">Design</p>
         <h2 class="fw-bold display-4 reveal">Created for Connection</h2>
-        <p class="pservices reveal">We design visual identities that reflect who you are and speak directly to your audience. <br>
-            Whether it’s a logo that stays in their minds or a website/App that drives results, we make <br>
-            it real.
+        <p class="pservices reveal">We design visual identities that reflect who you are and speak directly to your audience.
+            Whether it’s a logo that stays in their minds or a website/App that drives results, we make it real.
         </p>
       </div>
     </div>
@@ -284,39 +280,51 @@
       </div>
     </div> -->
     <div class="video-preview2">
-        <button class="video-btn-custom">
-          <i class="bi bi-play-fill fs-2"></i>
-           <span>Watch the video</span>
-        </button>
     </div>
     <div class="row g-4 pt-5 reveal">
       <div class="col-md-3 text-center pt-5">
-        <img src="multimedia/img/iconos/Identity.svg" alt="identity" class="icons">
-        <h6 class="fw-bold">Identity</h6>
-        <p>We create the core of your brand<br> from its voice and vision to the <br>
-          visual system that defines how it <br>lives, feels, and connects 
-        </p>
+        <div class="service-item">
+          <img src="multimedia/img/iconos/Identity.svg" alt="identity" class="icons">
+          <div class="service-text">
+            <h6 class="fw-bold">Identity</h6>
+            <p>We create the core of your brand from its voice and vision to the
+              visual system that defines how it lives, feels, and connects.
+            </p>
+          </div>
+        </div>
       </div>
       <div class="col-md-3 text-center pt-5">
-        <img src="multimedia/img/iconos/Style.svg" alt="style" class="icons">
-        <h6 class="fw-bold">Style</h6>
-        <p>Defined visual languages that<br>keep your brand cohesive across <br>
-          every platform, touchpoint, and <br> asset
-        </p>
+        <div class="service-item">
+          <img src="multimedia/img/iconos/Style.svg" alt="style" class="icons">
+          <div class="service-text">
+            <h6 class="fw-bold">Style</h6>
+            <p>Defined visual languages thatkeep your brand cohesive across 
+              every platform, touchpoint, and asset.
+            </p>
+          </div>
+        </div>
       </div>
       <div class="col-md-3 text-center pt-5">
-        <img src="multimedia/img/iconos/Web.svg" alt="web" class="icons">
-        <h6 class="fw-bold">Web</h6>
-        <p>Custom websites designed to <br> convert & blending clean UI, <br>
-          strategic UX, and storytelling <br>that feels true to your brand 
-        </p>
+        <div class="service-item">
+          <img src="multimedia/img/iconos/Web.svg" alt="web" class="icons">
+          <div class="service-text">
+            <h6 class="fw-bold">Web</h6>
+            <p>Custom websites designed to convert & blending clean UI, 
+              strategic UX, and storytelling that feels true to your brand.
+            </p>
+          </div>
+        </div>
       </div>
       <div class="col-md-3 text-center pt-5">
-        <img src="multimedia/img/iconos/Build.svg" alt="build" class="icons">
-        <h6 class="fw-bold">Build</h6>
-        <p>High-performance builds in <br> WordPress or custom code, <br>
-           turning great design into fast, <br> scalable digital products
-        </p>
+        <div class="service-item">
+          <img src="multimedia/img/iconos/Build.svg" alt="build" class="icons">
+          <div class="service-text">
+            <h6 class="fw-bold">Build</h6>
+            <p>High-performance builds in WordPress or custom code,
+               turning great design into fast, scalable digital products.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -329,44 +337,56 @@
       <div class="col-lg-12">
         <p style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); color:blueviolet;" class="reveal">Social Media</p>
         <h2 class="fw-bold display-4 reveal">Built for Impact</h2>
-        <p class="pservices reveal">We create trend-driven video narratives rooted in your brand’s essence and goals. <br>
-            This ensures strong engagement and based on your objective either reaching the right <br>
+        <p class="pservices reveal">We create trend-driven video narratives rooted in your brand’s essence and goals.
+            This ensures strong engagement and based on your objective either reaching the right
             audience or going viral.
         </p>
       </div>
     </div>
     <div class="ratio ratio-container ratio-16x9 position-relative reveal">
-      <video muted playsinline preload="metadata" id="video5" class="object-fit-cover">
+      <video autoplay loop muted playsinline preload="metadata" id="video1" class="object-fit-cover">
           <source src="multimedia/animaciones/video de edicion de video.mp4" type="video/mp4">
       </video>
-      <div class="position-absolute">
-        <button id="playbtn5" class="btn btnplaycustom d-flex align-items-center justify-content-center gap-2">
+      <!-- <div class="position-absolute">
+        <button id="playbtn" class="btn btnplaycustom d-flex align-items-center justify-content-center gap-2">
           <i class="bi bi-play-fill fs-2"></i>
            <span>Watch the video</span>
         </button>
-      </div>
+      </div> -->
     </div>
     <div class="row g-4 pt-5 reveal">
       <div class="col-md-4 text-center pt-5">
-        <img src="multimedia/img/iconos/Video.svg" alt="video" class="icons">
-        <h6 class="fw-bold">Video</h6>
-        <p>We create trend-driven narratives rooted <br> in your brand’s essence, ensuring strong <br>
-          engagement and the right kind of <br>reach—strategic or vira
-        </p>
+        <div class="service-item">
+           <img src="multimedia/img/iconos/Video.svg" alt="video" class="icons">
+        <div class="service-text">
+          <h6 class="fw-bold">Video</h6>
+          <p>We create trend-driven narratives rooted in your brand’s essence, ensuring strong
+            engagement and the right kind of reach—strategic or vira.
+          </p>
+        </div>
+      </div>
       </div>
       <div class="col-md-4 text-center pt-5">
-        <img src="multimedia/img/iconos/Stories.svg" alt="stories" class="icons">
-        <h6 class="fw-bold">Stories</h6>
-        <p>From concept to final cut, we build videos<br>that capture attention, reflect your brand, <br>
-          and perform across every platform.
-        </p>
+        <div class="service-item">
+          <img src="multimedia/img/iconos/Stories.svg" alt="stories" class="icons">
+          <div class="service-text">
+            <h6 class="fw-bold">Stories</h6>
+            <p>From concept to final cut, we build videos<br>that capture attention, reflect your brand, <br>
+              and perform across every platform.
+            </p>
+          </div>
+        </div>
       </div>
       <div class="col-md-4 text-center pt-5">
-        <img src="multimedia/img/iconos/Impact.svg" alt="impact" class="icons">
-        <h6 class="fw-bold">Impact</h6>
-        <p>Focused, goal-driven video content <br> designed to boost visibility, drive <br>
-          engagement, and connect with the <br>audience that matters. 
-        </p>
+        <div class="service-item">
+          <img src="multimedia/img/iconos/Impact.svg" alt="impact" class="icons">
+          <div class="service-text">
+            <h6 class="fw-bold">Impact</h6>
+            <p>Focused, goal-driven video content <br> designed to boost visibility, drive <br>
+              engagement, and connect with the <br>audience that matters. 
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -386,10 +406,12 @@
               <button data-bs-toggle="modal" data-bs-target="#faqModal" class="btn btn-custom1">FAQ</button>
           </div>
           <div class="col-auto reveal">
-              <button href="#contact" class="btn btn-custom2">Contact Us</button>
+              <button class="btn btn-custom2">
+                <a href="#contact" style="text-decoration: none; color: white;">Contact Us</a>
+              </button>
           </div>
         </div>
-            <p class="pt-3 fs-6 fw-lighter p-custom reveal">From $950</p>
+            <p class="pt-3 fs-6 fw-lighter p-custom reveal">From $850</p>
         </div>
     </div>
   </div>

@@ -17,29 +17,40 @@ const navbar = document.querySelector('.navbar');
 const logo = document.querySelector('.navbar-logo');
 
 let isDark = false;
-
 window.addEventListener('scroll', () => {
   const shouldBeDark = window.scrollY > 50;
-
   if (shouldBeDark === isDark) return;
-
   isDark = shouldBeDark;
   navbar.classList.toggle('scrolled', isDark);
 
   logo.classList.add('fade-out');
-
   setTimeout(() => {
     logo.src = isDark
       ? logo.dataset.logoDark
       : logo.dataset.logoLight;
-
     logo.classList.remove('fade-out');
   }, 150);
 });
 
+const navCollapse = document.getElementById('nav');
+const navCloseBtn = document.getElementById('navCloseBtn');
+
+navCloseBtn.addEventListener('click', () => {
+  const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
+  if (bsCollapse) bsCollapse.hide();
+});
+
+document.querySelectorAll('#nav .nav-link, #nav .btn').forEach(el => {
+  el.addEventListener('click', () => {
+    if (window.innerWidth < 992) {
+      const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
+      if (bsCollapse) bsCollapse.hide();
+    }
+  });
+});
+
 const videoHero = document.getElementById("hero-video");
 const fadeDuration = 0.7;
-
 let fading = false;
 
 videoHero.addEventListener("loadeddata", () => {
@@ -65,24 +76,20 @@ videoHero.addEventListener("timeupdate", () => {
 });
 
 const reveals = document.querySelectorAll(".reveal");
-
 const observer = new IntersectionObserver((entries)=>{
   
   entries.forEach(entry => {
-
     if(entry.isIntersecting){
       entry.target.classList.add("active");
     }
-
   });
-
 },{
   threshold:0.2
 });
-
 reveals.forEach(el => observer.observe(el));
 
-const video = document.getElementById('video1');
+
+/* const video = document.getElementById('video1');
 const btnPlay = document.getElementById ('playbtn');
 
 btnPlay.addEventListener('click', () => {
@@ -116,7 +123,7 @@ btnPlay5.addEventListener('click', () => {
   video5.play();
   btnPlay5.parentElement.style.display = 'none';
   video5.setAttribute('controls', 'true');
-});
+}); */
 
 
 document.getElementById("contactForm").addEventListener("submit", function (e) {
@@ -152,77 +159,171 @@ window.onscroll = function() {
 };
 
 
-const track = document.querySelector(".carousel-track")
-
-let slides = document.querySelectorAll(".card-slide")
-
-const firstClone = slides[0].cloneNode(true)
-const lastClone = slides[slides.length-1].cloneNode(true)
-
-track.appendChild(firstClone)
-track.prepend(lastClone)
-
-slides = document.querySelectorAll(".card-slide")
-
-let index = 1
-
-function update(){
-
-slides.forEach(s=>s.classList.remove("active"))
-slides[index].classList.add("active")
-
-const slideWidth = slides[0].offsetWidth + 50
-
-const centerOffset =
-(track.offsetWidth / 2) -
-(slideWidth / 2)
-
-track.style.transform =
-`translateX(${centerOffset - index * slideWidth}px)`
-
-}
-
-update()
-
-function next(){
-
-index++
-track.style.transition=".7s"
-
-update()
-
-}
-
-setInterval(next,3500)
-
-track.addEventListener("transitionend",()=>{
-
-if(slides[index].isEqualNode(firstClone)){
-
-track.style.transition="none"
-index = 1
-update()
-
-}
-
-if(slides[index].isEqualNode(lastClone)){
-
-track.style.transition="none"
-index = slides.length-2
-update()
-
-}
-
-})
-
 const carousel = document.getElementById("servicesCarousel")
 const categorySpan = document.querySelector(".carousel-category")
 
 carousel.addEventListener("slid.bs.carousel", function (event) {
+  const newCategory = event.relatedTarget.dataset.category;
 
-  const activeSlide = event.relatedTarget
-  const newCategory = activeSlide.dataset.category
-
-  categorySpan.textContent = newCategory
+  // Fade suave del texto
+  categorySpan.style.opacity = "0";
+  setTimeout(() => {
+    categorySpan.textContent = newCategory;
+    categorySpan.style.transition = "opacity 0.3s ease";
+    categorySpan.style.opacity = "1";
+  }, 150);
 
 })
+
+/***************Carousel with dots and captions below *********************************************/
+const slides = [
+    {
+      img: './multimedia/img/slide4.png',
+      caption: 'Targeted Reach'
+    },
+    {
+      img: './multimedia/img/slide5.png',
+      caption: 'Smart Growth'
+    },
+    {
+      img: './multimedia/img/slide6.png',
+      caption: 'Optimized Performance + AI'
+    },
+    {
+      img: './multimedia/img/slide7.png',
+      caption: 'Human Precision'
+    },
+  ];
+
+  /* ── State ──────────────────────────────────────────────────────── */
+  const TOTAL        = slides.length;
+  let currentIndex   = 0;
+  let autoplayTimer  = null;
+  let isDragging     = false;
+  let dragStartX     = 0;
+  let dragDeltaX     = 0;
+  const DRAG_THRESHOLD = 50; // px to register a swipe
+
+  /* ── DOM refs ───────────────────────────────────────────────────── */
+  const track     = document.getElementById('carouselTrack');
+  const dotsWrap  = document.getElementById('carouselDots');
+  const viewport  = document.getElementById('carouselViewport');
+
+  /* ── Build slides ───────────────────────────────────────────────── */
+  slides.forEach((s, i) => {
+    const slide = document.createElement('div');
+    slide.className = 'carousel-slide' + (i === 0 ? ' active' : '');
+    slide.dataset.index = i;
+    slide.innerHTML = `
+      <div class="slide-inner">
+        <img src="${s.img}" alt="${s.caption}" loading="lazy" />
+        <p class="slide-caption">${s.caption}</p>
+      </div>`;
+    track.appendChild(slide);
+  });
+
+  /* ── Build dots ─────────────────────────────────────────────────── */
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', `Ir al slide ${i + 1}`);
+    dot.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(dot);
+  });
+
+  /* ── Core: position track ───────────────────────────────────────── */
+  function getSlideWidth() {
+    // Actual rendered width of a slide element (includes padding via CSS)
+    return track.children[0].offsetWidth;
+  }
+
+  function updateTrack(extraOffset = 0) {
+    const slideW    = getSlideWidth();
+    const vpWidth   = viewport.offsetWidth;
+    // Center the active slide
+    const offset    = (vpWidth / 2) - (slideW / 2) - (currentIndex * slideW) + extraOffset;
+    track.style.transform = `translateX(${offset}px)`;
+  }
+
+  function updateActive() {
+    [...track.children].forEach((slide, i) => {
+      slide.classList.toggle('active', i === currentIndex);
+    });
+    [...dotsWrap.children].forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentIndex);
+    });
+  }
+
+  function goTo(index) {
+    // Wrap around for infinite loop
+    currentIndex = ((index % TOTAL) + TOTAL) % TOTAL;
+    updateActive();
+    updateTrack();
+  }
+
+  function next() { goTo(currentIndex + 1); }
+
+  /* ── Autoplay ───────────────────────────────────────────────────── */
+  function startAutoplay() {
+    stopAutoplay();
+    autoplayTimer = setInterval(next, 5000);
+  }
+  function stopAutoplay() {
+    clearInterval(autoplayTimer);
+  }
+
+  /* ── Drag / Swipe ───────────────────────────────────────────────── */
+  function onDragStart(e) {
+    isDragging = true;
+    dragStartX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
+    dragDeltaX = 0;
+    track.classList.add('is-dragging');
+    stopAutoplay();
+  }
+
+  function onDragMove(e) {
+    if (!isDragging) return;
+    const x   = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+    dragDeltaX = x - dragStartX;
+    updateTrack(dragDeltaX);
+  }
+
+  function onDragEnd() {
+    if (!isDragging) return;
+    isDragging = false;
+    track.classList.remove('is-dragging');
+
+    if (dragDeltaX < -DRAG_THRESHOLD)      goTo(currentIndex + 1);
+    else if (dragDeltaX > DRAG_THRESHOLD)  goTo(currentIndex - 1);
+    else                                    updateTrack(); // snap back
+
+    startAutoplay();
+  }
+
+  // Mouse
+  track.addEventListener('mousedown',  onDragStart);
+  window.addEventListener('mousemove', onDragMove);
+  window.addEventListener('mouseup',   onDragEnd);
+
+  // Touch
+  track.addEventListener('touchstart', onDragStart, { passive: true });
+  track.addEventListener('touchmove',  onDragMove,  { passive: true });
+  track.addEventListener('touchend',   onDragEnd);
+
+  // Pause autoplay on hover (desktop UX)
+  viewport.addEventListener('mouseenter', stopAutoplay);
+  viewport.addEventListener('mouseleave', startAutoplay);
+
+  /* ── Init ───────────────────────────────────────────────────────── */
+  // Wait for layout before computing widths
+  window.addEventListener('load', () => {
+    updateTrack();
+    startAutoplay();
+  });
+
+  // Recalculate on resize
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => updateTrack(), 100);
+  });

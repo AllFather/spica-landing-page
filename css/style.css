@@ -17,6 +17,7 @@ body {
   border: grey 1px solid;
   border-radius: 50px;
 }
+
 .btn-navbar:hover{
   color: white;
   background-color: black;
@@ -42,11 +43,16 @@ body {
     color: #d8d8d8;
 }
 .scrolled{
-    background-color: white !important;
+    background-color: rgba(255, 255, 255, 0.781) !important; 
+    height: 60px !important;
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(10px); 
+
 }
 .scrolled .nav-link, .scrolled .navbar-brand{
     color: black !important;
 }
+
 .transition-custom{
     transition: all 0.8s ease-in-out;
 }
@@ -85,6 +91,7 @@ body {
   opacity:1;
   transform: translateY(0) scale(1);
 }
+
 .icons{
     width: 80px;
     height: 80px;
@@ -259,19 +266,6 @@ transform:scale(1.1);
   font-size:16px;
 }
 
-@media(max-width:768px){
-
-.card-slide{
-flex:0 0 360px;
-margin:0 12px;
-}
-.slide-caption h5{
-  margin:0;
-  color:white;
-  font-size:10px;
-}
-
-}
 .p-custom1 {
     font-size: 1rem;
 }
@@ -539,3 +533,298 @@ footer {
   cursor:pointer;
   bottom: 80px;
 }
+
+/***************Carousel with dots and captions below *********************************************/
+.carousel-section {
+      width: 100%;
+      padding: 40px 0 32px;
+    }
+
+    /* ── Track wrapper: clips overflow but allows side slides to peek ── */
+    .carousel-viewport {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel-track {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+      cursor: grab;
+      user-select: none;
+    }
+    .carousel-track.is-dragging { cursor: grabbing; transition: none; }
+
+    /* ── Individual slides ── */
+    .carousel-slide {
+      flex: 0 0 var(--slide-width);
+      width: var(--slide-width);
+      padding: 0 var(--slide-gap);
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                  opacity  0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .slide-inner {
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fff;
+      position: relative;
+    }
+
+    .slide-inner img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+      pointer-events: none;
+    }
+
+    .slide-caption {
+      padding: 14px 14px 14px;
+      font-size: 14px;
+      color: white;
+      letter-spacing: 0.01em;
+      line-height: 1.5;
+      background:rgba(0,0,0,0.6);
+      border-radius: 50px;
+    }
+
+    /* ── Active slide: scaled up ── */
+    .carousel-slide.active {
+      transform: scale(1);
+      opacity: 1;
+      z-index: 2;
+    }
+    .carousel-slide:not(.active) {
+      transform: scale(0.88);
+      opacity: 0.6;
+      z-index: 1;
+    }
+
+    /* ── Dots ── */
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 24px;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ccc;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .dot.active {
+      background: #222;
+      transform: scale(1.25);
+    }
+
+/************************* Media Queries for Responsiveness *************************/
+:root {
+  --slide-width: 55%;
+  --slide-gap: 12px;
+}
+
+@media (max-width: 991px) {
+
+  .navbar-collapse {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh !important;
+    background-color: white !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    padding: 80px 32px 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 1055;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s linear 0.35s;
+    display: flex !important;
+    visibility: hidden;
+  }
+
+  .navbar-collapse.show {
+    transform: translateX(0);
+    visibility: visible;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s linear 0s;
+  }
+
+  .navbar-collapse .nav-link {
+    color: black !important;
+    font-size: 1.2rem;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    width: 100%;
+  }
+
+  .navbar-collapse .nav-btns {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: none !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 24px;
+    width: 50%;
+    margin-left: 25%;
+  }
+
+  .navbar-collapse .btn-navbar {
+    width: 100%;
+    text-align: center;
+  }
+
+  .btn {
+    padding: 10px 5px !important;
+    font-size: 16px !important;
+  }
+
+  .nav-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: black;
+    line-height: 1;
+    padding: 4px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  :root {
+    --slide-width: 85%;
+    --slide-gap: 8px;
+  }
+    .service-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    text-align: left;
+    }
+
+    .service-item .icons {
+    flex-shrink: 0;
+    }
+
+    .service-text h6 {
+    margin-bottom: 4px;
+    }
+
+    .service-text p {
+    margin: 0;
+    }
+
+    /* En desktop volvemos al layout vertical centrado */
+    @media (min-width: 769px) {
+    .service-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    }
+    .ratio-container {
+        border-radius: 30px;
+        overflow: hidden;
+    }
+
+    .card-slide {
+        flex: 0 0 420px;
+        margin: 0 12px;
+    }
+
+    .slide-caption {
+        font-size: 11px;
+    }
+
+    .slide-caption h5 {
+        margin: 0;
+        color: white;
+        font-size: 10px;
+    }
+
+    .carousel-top-caption {
+        top: 1.5rem;
+        padding: 10px 12px;
+        gap: 12px;
+    }
+
+    .carousel-category {
+        font-size: 0.7rem;
+    }
+
+    .nav-btn {
+        font-size: 14px;
+    }
+
+    .custom-caption {
+        font-size: 1.8rem;
+        margin-bottom: 8px;
+    }
+
+    .caption-p {
+        font-size: 0.85rem;
+        padding-bottom: 20px;
+        max-width: 80%;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .carousel-caption {
+        bottom: 0;
+        padding-bottom: 12px;
+        left: 0;
+        right: 0;
+    }
+
+    .video-preview2, .video-preview {
+        height: 350px;
+        border-radius: 20px;
+    }
+    
+    .btn-custom1 {
+        
+        border-radius: 10px;
+    }
+
+    }
+
+    @media (max-width: 480px) {
+
+    :root {
+        --slide-width: 92%;
+        --slide-gap: 6px;
+    }
+
+    .carousel-slide:not(.active) {
+        transform: scale(0.92);
+        opacity: 0.5;
+    }
+    }
+
+    @media (min-width: 992px) {
+
+    .nav-close-btn {
+        display: none;
+    }
+
+    .navbar-collapse {
+        background-color: transparent !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+    }
