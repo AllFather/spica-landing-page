@@ -441,3 +441,131 @@ videosm.addEventListener("timeupdate", () => {
   }
 
 });
+
+// ── FORM VALIDATION & SUBMIT ─────────────────────────────────────────
+
+const phoneConfig = {
+  Argentina: {
+    prefix: '+54 9',
+    placeholder: 'XXX XXXXXXX',
+    // +54 9 seguido de 10 dígitos
+    regex: /^9\s?\d{4}\s?\d{2}-?\d{4}$/
+  },
+  Peru: {
+    prefix: '+51',
+    placeholder: 'XXX XXX XXX',
+    // 9 dígitos
+    regex: /^\d{3}\s?\d{3}\s?\d{3}$/
+  },
+  USA: {
+    prefix: '+1',
+    placeholder: '(XXX) XXX-XXXX',
+    // 10 dígitos con formato opcional
+    regex: /^\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/
+  }
+};
+
+const countrySelect = document.getElementById('inputState');
+const phoneInput    = document.getElementById('phoneInput');
+const phonePrefix   = document.getElementById('phonePrefix');
+
+// Actualizar prefijo y placeholder al cambiar país
+countrySelect.addEventListener('change', () => {
+  const config = phoneConfig[countrySelect.value];
+  if (config) {
+    phonePrefix.textContent = config.prefix;
+    phoneInput.placeholder  = config.placeholder;
+    phoneInput.value        = '';
+    phoneInput.removeAttribute('disabled');
+  }
+});
+
+// Validar nombre: solo letras y espacios
+document.getElementById('nameInput').addEventListener('input', function () {
+  this.value = this.value.replace(/[^a-záéíóúüñA-ZÁÉÍÓÚÜÑ\s]/g, '');
+});
+
+// Submit
+document.getElementById('contactForm').addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  const form    = this;
+  const name    = document.getElementById('nameInput');
+  const email   = document.getElementById('emailInput');
+  const message = document.getElementById('messageInput');
+  const country = countrySelect;
+  let   valid   = true;
+
+  // Reset
+  form.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
+
+  // Validar país
+  if (!country.value) {
+    country.classList.add('is-invalid');
+    valid = false;
+  }
+
+  // Validar teléfono según país
+  const config = phoneConfig[country.value];
+  if (config) {
+    if (!config.regex.test(phoneInput.value.trim())) {
+      phoneInput.classList.add('is-invalid');
+      valid = false;
+    }
+  }
+
+  // Validar nombre (solo letras)
+  if (!name.value.trim() || /[^a-záéíóúüñA-ZÁÉÍÓÚÜÑ\s]/.test(name.value)) {
+    name.classList.add('is-invalid');
+    valid = false;
+  }
+
+  // Validar email
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email.value.trim())) {
+    email.classList.add('is-invalid');
+    valid = false;
+  }
+
+  // Validar mensaje
+  if (!message.value.trim()) {
+    message.classList.add('is-invalid');
+    valid = false;
+  }
+
+  if (!valid) return;
+
+  // Enviar
+  const formData = new FormData(form);
+  // Agregar prefijo al teléfono
+  formData.set('phone', `${phonePrefix.textContent} ${phoneInput.value.trim()}`);
+
+  try {
+    const res  = await fetch('send.php', { method: 'POST', body: formData });
+    const data = await res.json();
+
+    if (data.success) {
+      // Mostrar popup en el idioma correcto
+      const isEs = currentLang === 'es';
+      document.getElementById('successModalTitle').textContent = isEs
+        ? '¡Gracias por tu mensaje!'
+        : 'Thank you for your message!';
+      document.getElementById('successModalText').textContent = isEs
+        ? 'Nos pondremos en contacto pronto.'
+        : "We'll get back to you soon.";
+
+      const modal = new bootstrap.Modal(document.getElementById('successModal'));
+      modal.show();
+
+      form.reset();
+      phonePrefix.textContent = '+';
+
+      // Al cerrar el modal, scroll al inicio
+      document.getElementById('successModal').addEventListener('hidden.bs.modal', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, { once: true });
+    }
+  } catch (err) {
+    console.error('Error sending form:', err);
+  }
+});
