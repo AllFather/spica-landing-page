@@ -236,22 +236,22 @@ carousel.addEventListener("slid.bs.carousel", function (event) {
 /***************Carousel with dots and captions below *********************************************/
 const slides = [
     {
-      img: './multimedia/img/slide4.png',
+      img: './multimedia/img/slide4.webp',
       caption: 'Targeted Reach',
       captionEs: 'Alcance Dirigido'
     },
     {
-      img: './multimedia/img/slide5.png',
+      img: './multimedia/img/slide5.webp',
       caption: 'Smart Growth',
       captionEs: 'Crecimiento Inteligente'
     },
     {
-      img: './multimedia/img/slide6.png',
+      img: './multimedia/img/slide6.webp',
       caption: 'Optimized Performance + AI',
       captionEs: 'Rendimiento Optimizado + IA'
     },
     {
-      img: './multimedia/img/slide7.png',
+      img: './multimedia/img/slide7.webp',
       caption: 'Human Precision',
       captionEs: 'Precisión Humana'
     },

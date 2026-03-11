@@ -98,7 +98,7 @@ body {
     z-index:0;
 }
 .hero {
-    background-image: url("../multimedia/img/flower.png");
+    background-image: url("../multimedia/img/flower\\ logo.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -185,7 +185,7 @@ body {
     border: white 1px solid;
 }
 #results {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2)), url("../multimedia/img/results.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2)), url("../multimedia/img/results.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -358,7 +358,7 @@ transform:scale(1.1);
     background-color: black;
 }
 .portada{
-    background-image: url("../multimedia/img/flower logo.png");
+    background-image: url("../multimedia/img/flower\ logo.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -531,7 +531,7 @@ footer {
 .video-preview{
   width:100%;
   height: 800px;
-  background-image:url("../multimedia/img/Google\ Ads.png");
+  background-image:url("../multimedia/img/Google\ Ads.webp");
   background-size:cover;
   background-position:center;
   border-radius:40px;
@@ -546,7 +546,7 @@ footer {
 .video-preview2 {
   width:100%;
   height: 800px;
-  background-image:url("../multimedia/img/Diseño\ Ux.png");
+  background-image:url("../multimedia/img/Diseño\ Ux.webp");
   background-size:cover;
   background-position:center;
   border-radius:40px;
