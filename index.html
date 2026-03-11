@@ -31,35 +31,44 @@
     <div class="collapse navbar-collapse" id="nav">
       <button class="nav-close-btn" id="navCloseBtn" aria-label="Cerrar menú">&times;</button>
       <ul class="navbar-nav mx-auto gap-3 transition-custom">
-        <li class="nav-item"><a class="nav-link" href="#ads">Google / Meta Ads with AI</a></li>
-        <li class="nav-item"><a class="nav-link" href="#design">Design</a></li>
-        <li class="nav-item"><a class="nav-link" href="#socialmedia">Social Media</a></li>
+        <li class="nav-item"><a class="nav-link" href="#ads" data-en="Google / Meta Ads with AI" data-es="Google / Meta Ads con IA">Google / Meta Ads with AI</a></li>
+        <li class="nav-item"><a class="nav-link" href="#design" data-en="Design" data-es="Diseño">Design</a></li>
+        <li class="nav-item"><a class="nav-link" href="#socialmedia" data-en="Social Media" data-es="Redes Sociales">Social Media</a></li>
       </ul>
       <div class="nav-btns">
-      <a href="#faq" class="btn btn-navbar btn-sm me-2 px-2">FAQ</a>
-      <a href="#services" class="btn btn-navbar btn-sm me-2">Services
-      <a href="#contact" class="btn btn-navbar btn-sm" style="background-color: grey; color: white; border: none;">
-        Contact Us</a>
+        <a href="#faq" class="btn btn-navbar btn-sm me-2 px-2" data-en="FAQ" data-es="FAQ">FAQ</a>
+        <a href="#services" class="btn btn-navbar btn-sm me-2" data-en="Services" data-es="Servicios">Services</a>
+        <a href="#contact" class="btn btn-navbar btn-sm" style="background-color: grey; color: white; border: none;" data-en="Contact Us" data-es="Contáctanos">Contact Us</a>
+        <div class="lang-switch" id="langSwitch">
+          <span class="lang-option active" data-lang="en">EN</span>
+          <span class="lang-divider">|</span>
+          <span class="lang-option" data-lang="es">ES</span>
+        </div>
+      </div>
     </div>
-    </div>  
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="object-fit-contain hero-bg">
-  <video autoplay muted playsinline preload="metadata" id="hero-video">
+  <video autoplay loop muted playsinline preload="metadata" id="hero-video">
     <source src="multimedia/animaciones/mp4/hero_video_bg.mp4" type="video/mp4">
   </video>
   <div class="container position-relative">
     <div class="row vh-100 align-items-end pb-5 text-center">
-        <div class="col-lg-12">
-            <p class="fs-3 fw-bold mb-0 p-custom" style="color: white;">WELCOME</p>
-            <p class="lead p-custom" style="color: white;">
-              Togheter, creating the path to perfect campaigns
-            </p>
-            <a href="#contactForm" class="btn btn-custom">Contact Us</a>
-            <p class="mt-1 fs-6 fw-lighter p-custom" style="color: white;">From $850</p>
-        </div>
+      <div class="col-lg-12">
+        <p class="fs-3 fw-bold mb-0 p-custom" style="color: white;"
+           data-en="WELCOME" data-es="BIENVENIDO">WELCOME</p>
+        <p class="lead p-custom" style="color: white;"
+           data-en="Togheter, creating the path to perfect campaigns"
+           data-es="Juntos, creando el camino hacia campañas perfectas.">
+          Togheter, creating the path to perfect campaigns.
+        </p>
+        <a href="#contactForm" class="btn btn-custom"
+           data-en="Contact Us" data-es="Contáctanos">Contact Us</a>
+        <p class="mt-1 fs-6 fw-lighter p-custom" style="color: white;"
+           data-en="From $850" data-es="Desde $850">From $850</p>
+      </div>
     </div>
   </div>
 </section>
@@ -69,30 +78,29 @@
   <div class="container">
     <div class="row mb-5 text-center reveal">
       <div class="col-lg-12">
-        <h2 class="fw-bold display-4 reveal">Let´s build a strong visual brand</h2>
-        <p class="pservices reveal">We help brands grow through powerful ads with AI, creative content and
-             smart design that connect stragety with emotion to drive real results
+        <h2 class="fw-bold display-4 reveal"
+            data-en="Let´s build a strong visual brand"
+            data-es="Construyamos una marca visual sólida">Let´s build a strong visual brand</h2>
+        <p class="pservices reveal"
+           data-en="We help brands grow through powerful ads with AI, creative content and smart design that connect strategy with emotion to drive real results"
+           data-es="Ayudamos a las marcas a crecer con publicidad potenciada por IA, contenido creativo y diseño estratégico que conecta la estrategia con la emoción para generar resultados reales.">
+          We help brands grow through powerful ads with AI, creative content and
+          smart design that connect stragety with emotion to drive real results.
         </p>
       </div>
     </div>
     <div class="ratio ratio-container ratio-16x9 position-relative reveal">
       <video autoplay loop muted playsinline preload="metadata" id="video1" class="object-fit-cover">
-          <source src="multimedia/animaciones/video del logo dibujado.mp4" type="video/mp4">
+        <source src="multimedia/animaciones/video del logo dibujado.mp4" type="video/mp4">
       </video>
-      <!-- <div class="position-absolute">
-        <button id="playbtn" class="btn btnplaycustom d-flex align-items-center justify-content-center gap-2">
-          <i class="bi bi-play-fill fs-2"></i>
-           <span>Watch the video</span>
-        </button>
-      </div> -->
     </div>
     <div class="row g-4 pt-5 reveal">
       <div class="col-md-4 text-center pt-5">
         <div class="service-item">
           <img src="multimedia/img/iconos/StrategicPerformance.svg" alt="strategic performance" class="icons">
           <div class="service-text">
-            <h6 class="fw-bold">Stragetic Performance</h6>
-            <p class="pt-2">Performance driven campaigns that convert and grow.</p>
+            <h6 class="fw-bold" data-en="Strategic Performance" data-es="Rendimiento Estratégico">Strategic Performance</h6>
+            <p class="pt-2" data-en="Performance driven campaigns that convert and grow." data-es="Campañas orientadas al rendimiento que convierten y crecen.">Performance driven campaigns that convert and grow.</p>
           </div>
         </div>
       </div>
@@ -100,8 +108,8 @@
         <div class="service-item">
           <img src="multimedia/img/iconos/SeamlessExperience.svg" alt="seamless experience" class="icons">
           <div class="service-text">
-            <h6 class="fw-bold">Seamless Experience</h6>
-            <p class="pt-2">Visual identities that captivate, desing to leave a trace.</p>
+            <h6 class="fw-bold" data-en="Seamless Experience" data-es="Experiencia Fluida">Seamless Experience</h6>
+            <p class="pt-2" data-en="Visual identities that captivate, design to leave a trace." data-es="Identidades visuales que cautivan, diseñadas para dejar huella.">Visual identities that captivate, desing to leave a trace.</p>
           </div>
         </div>
       </div>
@@ -109,8 +117,8 @@
         <div class="service-item">
           <img src="multimedia/img/iconos/CreativeImpact.svg" alt="creative impact" class="icons">
           <div class="service-text">
-            <h6 class="fw-bold">Creative Impact</h6>
-            <p class="pt-2">Engaging stories that connect and inspire audiences.</p>
+            <h6 class="fw-bold" data-en="Creative Impact" data-es="Impacto Creativo">Creative Impact</h6>
+            <p class="pt-2" data-en="Engaging stories that connect and inspire audiences." data-es="Historias que conectan e inspiran a las audiencias.">Engaging stories that connect and inspire audiences.</p>
           </div>
         </div>
       </div>
@@ -121,56 +129,53 @@
 <!-- RESULT -->
 <section>
   <div id="servicesCarousel" class="carousel slide custom-carousel">
-  <!-- caption superior con navegación -->
-  <div class="carousel-top-caption">
-    <button class="nav-btn bi bi-chevron-left" data-bs-target="#servicesCarousel" data-bs-slide="prev">
-    </button>
-    <span class="carousel-category">Google / Meta Ads with AI</span>
-    <button class="nav-btn bi bi-chevron-right" data-bs-target="#servicesCarousel" data-bs-slide="next">
-    </button>
-  </div>
-
-  <div class="carousel-inner">
-    <!-- slide 1 -->
-    <div class="carousel-item active" data-category="Google / Meta Ads with AI">
-      <img src="multimedia/img/slide1.png" class="d-block w-100 img-fluid">
-      <div class="carousel-caption">
-        <h3 class="custom-caption">All About Results</h3>
-        <p class="caption-p">
-          In 3 months, creativity will flourish like never before.
-          Ideas will evolve, visuals will refine, and your brand will start to
-          feel alive again
-        </p>
-      </div>
+    <div class="carousel-top-caption">
+      <button class="nav-btn bi bi-chevron-left" data-bs-target="#servicesCarousel" data-bs-slide="prev"></button>
+      <span class="carousel-category">Google / Meta Ads with AI</span>
+      <button class="nav-btn bi bi-chevron-right" data-bs-target="#servicesCarousel" data-bs-slide="next"></button>
     </div>
-
-    <!-- slide 2 -->
-    <div class="carousel-item" data-category="Design">
-      <img src="multimedia/img/slide2.png" class="d-block w-100">
-      <div class="carousel-caption">
-        <h2 class="custom-caption">All About Results</h2>
-        <p class="caption-p">
-          In 3 months, creativity will flourish like never before.
-          Ideas will evolve, visuals will refine, and your brand will start to
-          feel alive again
-        </p>
+    <div class="carousel-inner">
+      <!-- slide 1 -->
+      <div class="carousel-item active" data-category-en="Google / Meta Ads with AI" data-category-es="Google / Meta Ads con IA" data-category="Google / Meta Ads with AI">
+        <img src="multimedia/img/slide1.png" class="d-block w-100 img-fluid">
+        <div class="carousel-caption">
+          <h3 class="custom-caption" data-en="All About Results" data-es="Todo sobre Resultados">All About Results</h3>
+          <p class="caption-p"
+             data-en="In 3 months, creativity will flourish like never before. Ideas will evolve, visuals will refine, and your brand will start to feel alive again"
+             data-es="En 3 meses, la creatividad florecerá como nunca antes. Las ideas evolucionarán, los visuales se refinarán y tu marca comenzará a sentirse viva otra vez">
+            In 3 months, creativity will flourish like never before.
+            Ideas will evolve, visuals will refine, and your brand will start to feel alive again
+          </p>
+        </div>
       </div>
-    </div>
-
-    <!-- slide 3 -->
-    <div class="carousel-item" data-category="Social Media">
-      <img src="multimedia/img/slide3.png" class="d-block w-100">
-      <div class="carousel-caption">
-        <h2 class="custom-caption">All About Results</h2>
-        <p class="caption-p">
-          In 3 months, creativity will flourish like never before.
-          Ideas will evolve, visuals will refine, and your brand will start to
-          feel alive again
-        </p>
+      <!-- slide 2 -->
+      <div class="carousel-item" data-category-en="Design" data-category-es="Diseño" data-category="Design">
+        <img src="multimedia/img/slide2.png" class="d-block w-100">
+        <div class="carousel-caption">
+          <h2 class="custom-caption" data-en="All About Results" data-es="Todo sobre Resultados">All About Results</h2>
+          <p class="caption-p"
+             data-en="In 3 months, creativity will flourish like never before. Ideas will evolve, visuals will refine, and your brand will start to feel alive again"
+             data-es="En 3 meses, la creatividad florecerá como nunca antes. Las ideas evolucionarán, los visuales se refinarán y tu marca comenzará a sentirse viva otra vez.">
+            In 3 months, creativity will flourish like never before.
+            Ideas will evolve, visuals will refine, and your brand will start to feel alive again.
+          </p>
+        </div>
+      </div>
+      <!-- slide 3 -->
+      <div class="carousel-item" data-category-en="Social Media" data-category-es="Redes Sociales" data-category="Social Media">
+        <img src="multimedia/img/slide3.png" class="d-block w-100">
+        <div class="carousel-caption">
+          <h2 class="custom-caption" data-en="All About Results" data-es="Todo sobre Resultados">All About Results</h2>
+          <p class="caption-p"
+             data-en="In 3 months, creativity will flourish like never before. Ideas will evolve, visuals will refine, and your brand will start to feel alive again"
+             data-es="En 3 meses, la creatividad florecerá como nunca antes. Las ideas evolucionarán, los visuales se refinarán y tu marca comenzará a sentirse viva otra vez">
+            In 3 months, creativity will flourish like never before.
+            Ideas will evolve, visuals will refine, and your brand will start to feel alive again
+          </p>
+        </div>
       </div>
     </div>
   </div>
-</div>  
 </section>
 
 <!-- ADS -->
@@ -178,34 +183,29 @@
   <div class="container">
     <div class="row mt-5 mb-5 text-center">
       <div class="col-lg-12">
-        <p style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); color:blueviolet;" class="reveal">Google/Meta Ads with AI</p>
-        <h2 class="fw-bold display-4 reveal">Smart and Purposeful</h2>
-        <p class="pservices reveal">Our work system is built around a skilled team focused on growth through precision,
-            creativity, and data intelligence. Every action, from ad setup to optimization, is designed to
-            attract high-quality leads and turn them into real results.
+        <p style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); color:blueviolet;" class="reveal"
+           data-en="Google/Meta Ads with AI" data-es="Google/Meta Ads con IA">Google/Meta Ads with AI</p>
+        <h2 class="fw-bold display-4 reveal"
+            data-en="Smart and Purposeful" data-es="Inteligente y con Propósito">Smart and Purposeful</h2>
+        <p class="pservices reveal"
+           data-en="Our work system is built around a skilled team focused on growth through precision, creativity, and data intelligence. Every action, from ad setup to optimization, is designed to attract high-quality leads and turn them into real results."
+           data-es="Nuestro sistema de trabajo está construido alrededor de un equipo experto enfocado en el crecimiento a través de la precisión, la creatividad y la inteligencia de datos. Cada acción, desde la configuración del anuncio hasta la optimización, está diseñada para atraer leads de alta calidad y convertirlos en resultados reales.">
+          Our work system is built around a skilled team focused on growth through precision,
+          creativity, and data intelligence. Every action, from ad setup to optimization, is designed to
+          attract high-quality leads and turn them into real results.
         </p>
       </div>
     </div>
-    <!-- <div class="ratio ratio-container ratio-16x9 position-relative reveal">
-      <video muted playsinline preload="metadata" id="video2" class="object-fit-cover">
-          <source src="multimedia/animaciones/video de edicion de video.mp4" type="video/mp4">
-      </video>
-      <div class="position-absolute">
-        <button id="playbtn2" class="btn btnplaycustom d-flex align-items-center justify-content-center gap-2">
-          <i class="bi bi-play-fill fs-2"></i>
-           <span>Watch the video</span>
-        </button>
-      </div>
-    </div> -->
-    <div class="video-preview img-fluid reveal">
-    </div>
+    <div class="video-preview img-fluid reveal"></div>
     <div class="row g-4 pt-5 reveal">
       <div class="col-md-3 text-center pt-5">
         <div class="service-item">
           <img src="multimedia/img/iconos/Focused.svg" alt="focused" class="icons">
           <div class="service-text">
-            <h6 class="fw-bold">Focused</h6>
-            <p>Every campaign is built around a clear, specific goal to ensure we attract the right audience and drive real results.</p>
+            <h6 class="fw-bold" data-en="Focused" data-es="Enfocado">Focused</h6>
+            <p data-en="Every campaign is built around a clear, specific goal to ensure we attract the right audience and drive real results."
+               data-es="Cada campaña se construye en torno a un objetivo claro y específico para atraer a la audiencia correcta y generar resultados reales.">
+              Every campaign is built around a clear, specific goal to ensure we attract the right audience and drive real results.</p>
           </div>
         </div>
       </div>
@@ -213,10 +213,10 @@
         <div class="service-item">
           <img src="multimedia/img/iconos/Adaptive.svg" alt="adaptive" class="icons">
           <div class="service-text">
-            <h6 class="fw-bold">Adaptive</h6>
-            <p>Continuous optimization through real-time data and A/B testing 
-              for stronger performance.
-            </p>
+            <h6 class="fw-bold" data-en="Adaptive" data-es="Adaptativo">Adaptive</h6>
+            <p data-en="Continuous optimization through real-time data and A/B testing for stronger performance."
+               data-es="Optimización continua a través de datos en tiempo real y pruebas A/B para un rendimiento más sólido.">
+              Continuous optimization through real-time data and A/B testing for stronger performance.</p>
           </div>
         </div>
       </div>
@@ -224,34 +224,31 @@
         <div class="service-item">
           <img src="multimedia/img/iconos/Efﬁcient.svg" alt="efficient" class="icons">
           <div class="service-text">
-            <h6 class="fw-bold pt-3">Efficient</h6>
-            <p>Smart budget allocation and automation tools to make every 
-            dollar work harder.
-          </p>
-        </div>
+            <h6 class="fw-bold pt-3" data-en="Efficient" data-es="Eficiente">Efficient</h6>
+            <p data-en="Smart budget allocation and automation tools to make every dollar work harder."
+               data-es="Asignación inteligente del presupuesto y herramientas de automatización para que cada peso rinda más.">
+              Smart budget allocation and automation tools to make every dollar work harder.</p>
+          </div>
         </div>
       </div>
       <div class="col-md-3 text-center pt-5">
         <div class="service-item">
           <img src="multimedia/img/iconos/Connected.svg" alt="connected" class="icons">
           <div class="service-text">
-            <h6 class="fw-bold pt-3">Connected</h6>
-            <p>We use AI to filter and qualify the best leads for smarter, faster
-              decisions.
-            </p>
+            <h6 class="fw-bold pt-3" data-en="Connected" data-es="Conectado">Connected</h6>
+            <p data-en="We use AI to filter and qualify the best leads for smarter, faster decisions."
+               data-es="Usamos IA para filtrar y calificar los mejores leads y tomar decisiones más inteligentes y rápidas.">
+              We use AI to filter and qualify the best leads for smarter, faster decisions.</p>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </section>
 
 <section class="carousel-section py-5">
   <div class="carousel-viewport" id="carouselViewport">
-    <div class="carousel-track" id="carouselTrack">
-      <!-- Slides injected by JS -->
-    </div>
+    <div class="carousel-track" id="carouselTrack"></div>
   </div>
   <div class="carousel-dots" id="carouselDots"></div>
 </section>
@@ -261,35 +258,28 @@
   <div class="container">
     <div class="row mt-5 mb-5 text-center">
       <div class="col-lg-12">
-        <p style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); color:blueviolet;" class="reveal">Design</p>
-        <h2 class="fw-bold display-4 reveal">Created for Connection</h2>
-        <p class="pservices reveal">We design visual identities that reflect who you are and speak directly to your audience.
-            Whether it’s a logo that stays in their minds or a website/App that drives results, we make it real.
+        <p style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); color:blueviolet;" class="reveal"
+           data-en="Design" data-es="Diseño">Design</p>
+        <h2 class="fw-bold display-4 reveal"
+            data-en="Created for Connection" data-es="Creado para Conectar">Created for Connection</h2>
+        <p class="pservices reveal"
+           data-en="We design visual identities that reflect who you are and speak directly to your audience. Whether it's a logo that stays in their minds or a website/App that drives results, we make it real."
+           data-es="Diseñamos identidades visuales que reflejan quiénes son y hablan directamente a su audiencia. Ya sea un logo que quede en la mente o una web/App que genere resultados, lo hacemos realidad.">
+          We design visual identities that reflect who you are and speak directly to your audience.
+          Whether it's a logo that stays in their minds or a website/App that drives results, we make it real.
         </p>
       </div>
     </div>
-    <!-- <div class="ratio ratio-container ratio-16x9 position-relative reveal">
-      <video muted playsinline preload="metadata" id="video4" class="object-fit-cover">
-          <source src="multimedia/animaciones/video de edicion de video.mp4" type="video/mp4">
-      </video>
-      <div class="position-absolute">
-        <button id="playbtn4" class="btn btnplaycustom d-flex align-items-center justify-content-center gap-2">
-          <i class="bi bi-play-fill fs-2"></i>
-           <span>Watch the video</span>
-        </button>
-      </div>
-    </div> -->
-    <div class="video-preview2">
-    </div>
+    <div class="video-preview2"></div>
     <div class="row g-4 pt-5 reveal">
       <div class="col-md-3 text-center pt-5">
         <div class="service-item">
           <img src="multimedia/img/iconos/Identity.svg" alt="identity" class="icons">
           <div class="service-text">
-            <h6 class="fw-bold">Identity</h6>
-            <p>We create the core of your brand from its voice and vision to the
-              visual system that defines how it lives, feels, and connects.
-            </p>
+            <h6 class="fw-bold" data-en="Identity" data-es="Identidad">Identity</h6>
+            <p data-en="We create the core of your brand from its voice and vision to the visual system that defines how it lives, feels, and connects."
+               data-es="Creamos el núcleo de tu marca, desde su voz y visión hasta el sistema visual que define cómo vive, se siente y conecta.">
+              We create the core of your brand from its voice and vision to the visual system that defines how it lives, feels, and connects.</p>
           </div>
         </div>
       </div>
@@ -297,10 +287,10 @@
         <div class="service-item">
           <img src="multimedia/img/iconos/Style.svg" alt="style" class="icons">
           <div class="service-text">
-            <h6 class="fw-bold">Style</h6>
-            <p>Defined visual languages thatkeep your brand cohesive across 
-              every platform, touchpoint, and asset.
-            </p>
+            <h6 class="fw-bold" data-en="Style" data-es="Estilo">Style</h6>
+            <p data-en="Defined visual languages that keep your brand cohesive across every platform, touchpoint, and asset."
+               data-es="Lenguajes visuales definidos que mantienen tu marca cohesiva en cada plataforma, punto de contacto y activo.">
+              Defined visual languages thatkeep your brand cohesive across every platform, touchpoint, and asset.</p>
           </div>
         </div>
       </div>
@@ -308,10 +298,10 @@
         <div class="service-item">
           <img src="multimedia/img/iconos/Web.svg" alt="web" class="icons">
           <div class="service-text">
-            <h6 class="fw-bold">Web</h6>
-            <p>Custom websites designed to convert & blending clean UI, 
-              strategic UX, and storytelling that feels true to your brand.
-            </p>
+            <h6 class="fw-bold" data-en="Web" data-es="Web">Web</h6>
+            <p data-en="Custom websites designed to convert, blending clean UI, strategic UX, and storytelling that feels true to your brand."
+               data-es="Sitios web personalizados diseñados para convertir, combinando una UI limpia, UX estratégica y storytelling fiel a tu marca.">
+              Custom websites designed to convert & blending clean UI, strategic UX, and storytelling that feels true to your brand.</p>
           </div>
         </div>
       </div>
@@ -319,10 +309,10 @@
         <div class="service-item">
           <img src="multimedia/img/iconos/Build.svg" alt="build" class="icons">
           <div class="service-text">
-            <h6 class="fw-bold">Build</h6>
-            <p>High-performance builds in WordPress or custom code,
-               turning great design into fast, scalable digital products.
-            </p>
+            <h6 class="fw-bold" data-en="Build" data-es="Desarrollo">Build</h6>
+            <p data-en="High-performance builds in WordPress or custom code, turning great design into fast, scalable digital products."
+               data-es="Desarrollos de alto rendimiento en WordPress o código personalizado, convirtiendo un gran diseño en productos digitales rápidos y escalables.">
+              High-performance builds in WordPress or custom code, turning great design into fast, scalable digital products.</p>
           </div>
         </div>
       </div>
@@ -335,45 +325,46 @@
   <div class="container">
     <div class="row mb-5 text-center">
       <div class="col-lg-12">
-        <p style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); color:blueviolet;" class="reveal">Social Media</p>
-        <h2 class="fw-bold display-4 reveal">Built for Impact</h2>
-        <p class="pservices reveal">We create trend-driven video narratives rooted in your brand’s essence and goals.
-            This ensures strong engagement and based on your objective either reaching the right
-            audience or going viral.
+        <p style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); color:blueviolet;" class="reveal"
+           data-en="Social Media" data-es="Redes Sociales">Social Media</p>
+        <h2 class="fw-bold display-4 reveal"
+            data-en="Built for Impact" data-es="Creado para el Impacto">Built for Impact</h2>
+        <p class="pservices reveal"
+           data-en="We create trend-driven video narratives rooted in your brand's essence and goals. This ensures strong engagement and based on your objective either reaching the right audience or going viral."
+           data-es="Creamos narrativas de video basadas en tendencias, arraigadas en la esencia y objetivos de tu marca. Esto garantiza un fuerte engagement y, según tu objetivo, alcanzar a la audiencia correcta o volverse viral.">
+          We create trend-driven video narratives rooted in your brand's essence and goals.
+          This ensures strong engagement and based on your objective either reaching the right
+          audience or going viral.
         </p>
       </div>
     </div>
     <div class="ratio ratio-container ratio-16x9 position-relative reveal">
-      <video autoplay loop muted playsinline preload="metadata" id="video1" class="object-fit-cover">
-          <source src="multimedia/animaciones/video de edicion de video.mp4" type="video/mp4">
+      <video autoplay loop muted playsinline preload="metadata" class="object-fit-cover" id="video-sm">
+        <source src="multimedia/animaciones/video de edicion de video.mp4" type="video/mp4">
       </video>
-      <!-- <div class="position-absolute">
-        <button id="playbtn" class="btn btnplaycustom d-flex align-items-center justify-content-center gap-2">
-          <i class="bi bi-play-fill fs-2"></i>
-           <span>Watch the video</span>
-        </button>
-      </div> -->
     </div>
     <div class="row g-4 pt-5 reveal">
       <div class="col-md-4 text-center pt-5">
         <div class="service-item">
-           <img src="multimedia/img/iconos/Video.svg" alt="video" class="icons">
-        <div class="service-text">
-          <h6 class="fw-bold">Video</h6>
-          <p>We create trend-driven narratives rooted in your brand’s essence, ensuring strong
-            engagement and the right kind of reach—strategic or vira.
-          </p>
+          <img src="multimedia/img/iconos/Video.svg" alt="video" class="icons">
+          <div class="service-text">
+            <h6 class="fw-bold" data-en="Video" data-es="Video">Video</h6>
+            <p data-en="We create trend-driven narratives rooted in your brand's essence, ensuring strong engagement and the right kind of reach—strategic or viral."
+               data-es="Creamos narrativas basadas en tendencias, arraigadas en la esencia de tu marca, garantizando un fuerte engagement y el alcance adecuado, ya sea estratégico o viral.">
+              We create trend-driven narratives rooted in your brand's essence, ensuring strong
+              engagement and the right kind of reach—strategic or vira.</p>
+          </div>
         </div>
-      </div>
       </div>
       <div class="col-md-4 text-center pt-5">
         <div class="service-item">
           <img src="multimedia/img/iconos/Stories.svg" alt="stories" class="icons">
           <div class="service-text">
-            <h6 class="fw-bold">Stories</h6>
-            <p>From concept to final cut, we build videos<br>that capture attention, reflect your brand, <br>
-              and perform across every platform.
-            </p>
+            <h6 class="fw-bold" data-en="Stories" data-es="Historias">Stories</h6>
+            <p data-en="From concept to final cut, we build videos that capture attention, reflect your brand, and perform across every platform."
+               data-es="Desde el concepto hasta el corte final, creamos videos que capturan la atención, reflejan tu marca y funcionan en todas las plataformas.">
+              From concept to final cut, we build videos that capture attention, reflect your brand,
+              and perform across every platform.</p>
           </div>
         </div>
       </div>
@@ -381,10 +372,11 @@
         <div class="service-item">
           <img src="multimedia/img/iconos/Impact.svg" alt="impact" class="icons">
           <div class="service-text">
-            <h6 class="fw-bold">Impact</h6>
-            <p>Focused, goal-driven video content <br> designed to boost visibility, drive <br>
-              engagement, and connect with the <br>audience that matters. 
-            </p>
+            <h6 class="fw-bold" data-en="Impact" data-es="Impacto">Impact</h6>
+            <p data-en="Focused, goal-driven video content designed to boost visibility, drive engagement, and connect with the audience that matters."
+               data-es="Contenido de video enfocado y orientado a objetivos, diseñado para aumentar la visibilidad, impulsar el engagement y conectar con la audiencia que importa.">
+              Focused, goal-driven video content designed to boost visibility, drive
+              engagement, and connect with the audience that matters.</p>
           </div>
         </div>
       </div>
@@ -396,373 +388,416 @@
 <section id="faq">
   <div class="container">
     <div class="row pb-5">
-        <div class="col-lg-12 text-center">
-            <p class="fs-3 fw-bold mb-0 p-custom reveal" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">DESIGN. CODE. STORY.</p>
-            <p class="lead p-custom reveal" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
-             Cohesive brands and digital experiences that actually work.
-            </p>
-        <div class=" row pt-3 justify-content-center">
+      <div class="col-lg-12 text-center">
+        <p class="fs-3 fw-bold mb-0 p-custom reveal" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);"
+           data-en="DESIGN. CODE. STORY." data-es="DISEÑO. CÓDIGO. HISTORIA.">DESIGN. CODE. STORY.</p>
+        <p class="lead p-custom reveal" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);"
+           data-en="Cohesive brands and digital experiences that actually work."
+           data-es="Marcas coherentes y experiencias digitales que realmente funcionan.">
+          Cohesive brands and digital experiences that actually work.
+        </p>
+        <div class="row pt-3 justify-content-center">
           <div class="col-auto reveal">
-              <button data-bs-toggle="modal" data-bs-target="#faqModal" class="btn btn-custom1">FAQ</button>
+            <button data-bs-toggle="modal" data-bs-target="#faqModal" class="btn btn-custom1"
+                    data-en="FAQ" data-es="FAQ">FAQ</button>
           </div>
           <div class="col-auto reveal">
-              <button class="btn btn-custom2">
-                <a href="#contact" style="text-decoration: none; color: white;">Contact Us</a>
-              </button>
+            <button class="btn btn-custom2">
+              <a href="#contact" style="text-decoration: none; color: white;"
+                 data-en="Contact Us" data-es="Contáctanos">Contact Us</a>
+            </button>
           </div>
         </div>
-            <p class="pt-3 fs-6 fw-lighter p-custom reveal">From $850</p>
-        </div>
+        <p class="pt-3 fs-6 fw-lighter p-custom reveal"
+           data-en="From $850" data-es="Desde $850">From $850</p>
+      </div>
     </div>
   </div>
-  <div class="portada">
-  </div>
+  <div class="portada"></div>
 </section>
 
 <!-- CONTACT -->
-<section  id="contact">
+<section id="contact">
   <div class="container">
     <div class="row">
       <div class="col-md-6 text-start pb-5 reveal">
-      <img src="multimedia/img/logo/logo_spica_negro.png" alt="Spica Logo" class="navbar-logo">
+        <img src="multimedia/img/logo/logo_spica_negro.png" alt="Spica Logo" class="navbar-logo">
       </div>
       <div class="col-md-6 reveal">
-          <h2 class="fw-bold fs-3">Communication Channel</h2>
-      <div>
-        <ul class="list-unstyled ">
-          <li class="pt-2">Email: cesarg@spicastudio.art</li>
-          <li class="pt-2">US Number (iMessage): +1 (657) 570-9278</li>
-          <li class="pt-2">PE Number (WhatsApp): +51 936 161 337</li>
-          <li class="pt-2">AR Number (WhatsApp & iMessage): +54 9 11 7621-4901</li>
+        <h2 class="fw-bold fs-3"
+            data-en="Communication Channel" data-es="Canal de Comunicación">Communication Channel</h2>
+        <ul class="list-unstyled">
+          <li class="pt-2" data-en="Email: cesarg@spicastudio.art" data-es="Email: cesarg@spicastudio.art">
+            Email: <a href="mailto:cesarg@spicastudio.art" target="_blank" style="text-decoration: none; color: violet;">cesarg@spicastudio.art</a>
+          </li>
+          <li class="pt-2" data-en="US Number (iMessage): +1 (657) 570-9278" data-es="Número EE.UU. (iMessage): +1 (657) 570-9278">US Number (iMessage): +1 (657) 570-9278 </li>
+          <li class="pt-2" data-en="PE Number (WhatsApp): +51 936 161 337" data-es="Número PE (WhatsApp): +51 936 161 337">
+            PE Number (WhatsApp): <a href="https://wa.me/51936161337" style="text-decoration: none; color: violet;">+51 936 161 337</a>
+          </li>
+          <li class="pt-2" data-en="AR Number (WhatsApp & iMessage): +54 9 11 7621-4901" data-es="Número AR (WhatsApp & iMessage): +54 9 11 7621-4901">
+            AR Number (WhatsApp & iMessage): <a href="https://wa.me/5491176214901" style="text-decoration: none; color: violet;">+54 9 11 7621-4901</a>
+          </li>
         </ul>
       </div>
-      </div>
     </div>
+  </div>
 </section>
 
-<!-- CONTACT FORM-->
+<!-- CONTACT FORM -->
 <section class="video-section position-relative">
   <video class="bg-video" autoplay loop muted playsinline preload="metadata">
     <source src="multimedia/animaciones/Video W del cafe.mp4" type="video/mp4">
   </video>
   <div class="container position-relative">
     <div class="row align-items-center min-vh-100 py-5">
-      
       <div class="col-md-8 text-white">
-        <h2 class="fw-bold display-5 reveal">Get in touch</h2>
+        <h2 class="fw-bold display-5 reveal"
+            data-en="Get in touch" data-es="Ponte en contacto">Get in touch</h2>
       </div>
-
       <div class="col-md-4">
         <form id="contactForm">
-            <div class="row reveal">
-                    <div class="col-md-12 pb-5">
-                      <input type="text" name="name" class="form-control" placeholder="Name" required>
-                    </div>
-                    <div class="col-md-12 pb-5">
-                      <input type="email" name="email" class="form-control" placeholder="Email address" required>
-                    </div>
-                    <div class="col-md-12 pb-5">
-                      <input type="text" name="phone" class="form-control" placeholder="Phone number (optional)">
-                    </div>
-                    <div class="col-md-12 pb-5">
-                      <select id="inputState" class="form-select" name="country" placeholder="Country" required>
-                        <option  disabled selected>Country</option>
-                        <option >Argentina</option>
-                        <option >Perú</option>
-                        <option >United States</option>
-                      </select>
-                    </div>
-                    <div class="col-md-12 pb-5">
-                      <textarea name="message" class="form-control" rows="4" placeholder="Message" required></textarea>
-                    </div>
-                    <div class="col-md-12 pt-5">
-                      <button type="submit" class="btn btn-submit w-100">Submit</button>
-                    </div>
+          <div class="row reveal">
+            <div class="col-md-12 pb-5">
+              <input type="text" name="name" class="form-control" data-en-placeholder="Name" data-es-placeholder="Nombre" placeholder="Name" required>
             </div>
-            <p class="text-center terms pt-2">
-              By clicking "Submit", you authorize Spica Studio to notify you about exclusive
-              events,service updates, and company news.
-            </p>
+            <div class="col-md-12 pb-5">
+              <input type="email" name="email" class="form-control" data-en-placeholder="Email address" data-es-placeholder="Correo electrónico" placeholder="Email address" required>
+            </div>
+            <div class="col-md-12 pb-5">
+              <input type="text" name="phone" class="form-control" data-en-placeholder="Phone number (optional)" data-es-placeholder="Teléfono (opcional)" placeholder="Phone number (optional)">
+            </div>
+            <div class="col-md-12 pb-5">
+              <select id="inputState" class="form-select" name="country" required>
+                <option disabled selected data-en="Country" data-es="País">Country</option>
+                <option>Argentina</option>
+                <option>Perú</option>
+                <option>United States</option>
+              </select>
+            </div>
+            <div class="col-md-12 pb-5">
+              <textarea name="message" class="form-control" rows="4" data-en-placeholder="Message" data-es-placeholder="Mensaje" placeholder="Message" required></textarea>
+            </div>
+            <div class="col-md-12 pt-5">
+              <button type="submit" class="btn btn-submit w-100"
+                      data-en="Submit" data-es="Enviar">Submit</button>
+            </div>
+          </div>
+          <p class="text-center terms pt-2"
+             data-en='By clicking "Submit", you authorize Spica Studio to notify you about exclusive events, service updates, and company news.'
+             data-es='Al hacer clic en "Enviar", autorizas a Spica Studio a notificarte sobre eventos exclusivos, actualizaciones de servicios y noticias de la empresa.'>
+            By clicking "Submit", you authorize Spica Studio to notify you about exclusive
+            events, service updates, and company news.
+          </p>
         </form>
       </div>
     </div>
   </div>
 </section>
+
 <!-- FOOTER -->
 <footer class="py-4">
   <div class="container text-center">
-    <p class="mb-0">© 2026 Spica Studio</p>
+    <p class="mb-0" data-en="© 2026 Spica Studio" data-es="© 2026 Spica Studio">© 2026 Spica Studio</p>
   </div>
 </footer>
+
 <a href="#" class="btn-back-to-top" id="btnToTop">
-  <i class="bi bi-arrow-up"></i> 
+  <i class="bi bi-arrow-up"></i>
 </a>
 
 <!-- POP UP FAQ -->
 <div class="modal fade" id="faqModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
-
-      <!-- HEADER -->
       <div class="modal-header row">
         <button type="button" class="btn-close col-md-12 pt-3" data-bs-dismiss="modal"></button>
-        <h5 class="modal-title fw-bold text-center col-md-12">FAQ</h5>
+        <h5 class="modal-title fw-bold text-center col-md-12" data-en="FAQ" data-es="Preguntas Frecuentes">FAQ</h5>
       </div>
-
-      <!-- BODY -->
       <div class="modal-body">
         <div class="accordion accordion-flush">
-          <h5 class="text-center text-black">AI Integration</h5>
+
+          <h5 class="text-center text-black" data-en="AI Integration" data-es="Integración de IA">AI Integration</h5>
+
           <div class="accordion-item pb-4">
-             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse1" aria-expanded="false" aria-controls="flush-collapse1">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse1"
+                      data-en="Do you use AI for leads?" data-es="¿Usan IA para conseguir leads?">
                 Do you use AI for leads?
               </button>
-              </h2>
-              <div id="flush-collapse1" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                  <p>
-                   Yes. We use AI to qualify and prioritize high-value leads based on your ideal client profile.
-                  </p>
-                </div>
+            </h2>
+            <div id="flush-collapse1" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                <p data-en="Yes. We use AI to qualify and prioritize high-value leads based on your ideal client profile."
+                   data-es="Sí. Usamos IA para calificar y priorizar leads de alto valor basándonos en tu perfil de cliente ideal.">
+                  Yes. We use AI to qualify and prioritize high-value leads based on your ideal client profile.</p>
               </div>
+            </div>
           </div>
+
           <div class="accordion-item pb-4">
-             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse2" aria-expanded="false" aria-controls="flush-collapse2">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse2"
+                      data-en="Do you use AI in other services?" data-es="¿Usan IA en otros servicios?">
                 Do you use AI in other services?
               </button>
             </h2>
             <div id="flush-collapse2" class="accordion-collapse collapse">
               <div class="accordion-body">
-                <p>
-                  Yes. Depending on the project, we integrate AI for automated engagement, follow-ups, lead warming, workflow systems, or video-related tasks.
-                </p>
+                <p data-en="Yes. Depending on the project, we integrate AI for automated engagement, follow-ups, lead warming, workflow systems, or video-related tasks."
+                   data-es="Sí. Según el proyecto, integramos IA para engagement automatizado, seguimientos, calentamiento de leads, sistemas de flujo de trabajo o tareas relacionadas con video.">
+                  Yes. Depending on the project, we integrate AI for automated engagement, follow-ups, lead warming, workflow systems, or video-related tasks.</p>
               </div>
             </div>
           </div>
+
           <div class="accordion-item pb-4">
-             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse3" aria-expanded="false" aria-controls="flush-collapse3">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse3"
+                      data-en="Can I hire you to integrate AI into my website?" data-es="¿Puedo contratarlos para integrar IA en mi sitio web?">
                 Can I hire you to integrate AI into my website?
               </button>
-              </h2>
-              <div id="flush-collapse3" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                  <p>
-                    Yes. We can optimize and train AI systems for your goals—support, conversions, automation, or engagement.
-                  </p>
-                </div>
+            </h2>
+            <div id="flush-collapse3" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                <p data-en="Yes. We can optimize and train AI systems for your goals—support, conversions, automation, or engagement."
+                   data-es="Sí. Podemos optimizar y entrenar sistemas de IA para tus objetivos: soporte, conversiones, automatización o engagement.">
+                  Yes. We can optimize and train AI systems for your goals—support, conversions, automation, or engagement.</p>
               </div>
+            </div>
           </div>
 
-          <h5 class="text-center text-black">Project Timeline & Delivery</h5>
+          <h5 class="text-center text-black" data-en="Project Timeline & Delivery" data-es="Plazos y Entrega del Proyecto">Project Timeline & Delivery</h5>
+
           <div class="accordion-item pb-4">
-             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse4" aria-expanded="false" aria-controls="flush-collapse4">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse4"
+                      data-en="How long does the full project take?" data-es="¿Cuánto tiempo dura el proyecto completo?">
                 How long does the full project take?
               </button>
-              </h2>
-              <div id="flush-collapse4" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                  <p>
-                   Timelines vary by service. Branding takes about 2–4 weeks, websites 4–6 weeks, and videos 3–10 days. If you already have assets, we move faster; if not, we guide you from zero.
-                  </p>
-                </div>
+            </h2>
+            <div id="flush-collapse4" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                <p data-en="Timelines vary by service. Branding takes about 2–4 weeks, websites 4–6 weeks, and videos 3–10 days. If you already have assets, we move faster; if not, we guide you from zero."
+                   data-es="Los plazos varían según el servicio. El branding toma aproximadamente 2–4 semanas, los sitios web 4–6 semanas y los videos 3–10 días. Si ya tienes activos, avanzamos más rápido; si no, te guiamos desde cero.">
+                  Timelines vary by service. Branding takes about 2–4 weeks, websites 4–6 weeks, and videos 3–10 days. If you already have assets, we move faster; if not, we guide you from zero.</p>
               </div>
+            </div>
           </div>
 
-          <h5 class="text-center text-black">Pricing, Scope & Investment</h5>
+          <h5 class="text-center text-black" data-en="Pricing, Scope & Investment" data-es="Precios, Alcance e Inversión">Pricing, Scope & Investment</h5>
+
           <div class="accordion-item pb-4">
-             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse5" aria-expanded="false" aria-controls="flush-collapse5">
-                What’s the overall cost of the project?
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse5"
+                      data-en="What's the overall cost of the project?" data-es="¿Cuál es el costo total del proyecto?">
+                What's the overall cost of the project?
               </button>
-              </h2>
-              <div id="flush-collapse5" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                  <p>
-                   It depends on scope—branding, web design, ads, or total videos. Most projects start at $850, and you receive a clear proposal with timeline and deliverables before we begin.
-                  </p>
-                </div>
+            </h2>
+            <div id="flush-collapse5" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                <p data-en="It depends on scope—branding, web design, ads, or total videos. Most projects start at $850, and you receive a clear proposal with timeline and deliverables before we begin."
+                   data-es="Depende del alcance: branding, diseño web, anuncios o cantidad de videos. La mayoría de los proyectos comienzan desde $850 y recibirás una propuesta clara con plazos y entregables antes de comenzar.">
+                  It depends on scope—branding, web design, ads, or total videos. Most projects start at $850, and you receive a clear proposal with timeline and deliverables before we begin.</p>
               </div>
+            </div>
           </div>
-          
-          <h5 class="text-center text-black">Video Production & Workflow</h5>
+
+          <h5 class="text-center text-black" data-en="Video Production & Workflow" data-es="Producción de Video y Flujo de Trabajo">Video Production & Workflow</h5>
+
           <div class="accordion-item pb-4">
-             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse6" aria-expanded="false" aria-controls="flush-collapse6">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse6"
+                      data-en="How are the videos filmed and what do you need from me?" data-es="¿Cómo se filman los videos y qué necesitan de mí?">
                 How are the videos filmed and what do you need from me?
               </button>
-              </h2>
-              <div id="flush-collapse6" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                  <p>
-                   We use a clean 4K/60fps workflow. We train one person on your team to film with the correct settings while we handle direction, scripts, editing, post-production, copywriting, hashtags, and covers.
-                  </p>
-                </div>
+            </h2>
+            <div id="flush-collapse6" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                <p data-en="We use a clean 4K/60fps workflow. We train one person on your team to film with the correct settings while we handle direction, scripts, editing, post-production, copywriting, hashtags, and covers."
+                   data-es="Usamos un flujo de trabajo limpio en 4K/60fps. Entrenamos a una persona de tu equipo para filmar con la configuración correcta mientras nosotros nos encargamos de la dirección, guiones, edición, posproducción, copywriting, hashtags y portadas.">
+                  We use a clean 4K/60fps workflow. We train one person on your team to film with the correct settings while we handle direction, scripts, editing, post-production, copywriting, hashtags, and covers.</p>
               </div>
+            </div>
           </div>
+
           <div class="accordion-item pb-4">
-             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse7" aria-expanded="false" aria-controls="flush-collapse7">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse7"
+                      data-en="How will you film the videos?" data-es="¿Cómo filmarán los videos?">
                 How will you film the videos?
               </button>
             </h2>
             <div id="flush-collapse7" class="accordion-collapse collapse">
               <div class="accordion-body">
-                <p>
-                  If you're in the U.S., our video team handles the first on-site shoot and trains your team. If you want monthly filming, we offer a dedicated add-on.
-                </p>
+                <p data-en="If you're in the U.S., our video team handles the first on-site shoot and trains your team. If you want monthly filming, we offer a dedicated add-on."
+                   data-es="Si estás en EE.UU., nuestro equipo de video se encarga de la primera grabación en sitio y entrena a tu equipo. Si deseas filmaciones mensuales, ofrecemos un servicio adicional dedicado.">
+                  If you're in the U.S., our video team handles the first on-site shoot and trains your team. If you want monthly filming, we offer a dedicated add-on.</p>
               </div>
             </div>
           </div>
+
           <div class="accordion-item pb-4">
-             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse8" aria-expanded="false" aria-controls="flush-collapse8">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse8"
+                      data-en="What if I'm outside the United States?" data-es="¿Qué pasa si estoy fuera de los Estados Unidos?">
                 What if I'm outside the United States?
               </button>
-              </h2>
-              <div id="flush-collapse8" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                  <p>
-                    We train your team to film with the correct direction and settings using an iPhone 14 Pro or newer. We handle direction, scripts, editing, post-production, copywriting, 
-                    hashtags, and covers. We also offer on-site filming if you are in Peru, Argentina, Ecuador, Spain, or Italy.
-                  </p>
-                </div>
+            </h2>
+            <div id="flush-collapse8" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                <p data-en="We train your team to film with the correct direction and settings using an iPhone 14 Pro or newer. We handle direction, scripts, editing, post-production, copywriting, hashtags, and covers. We also offer on-site filming if you are in Peru, Argentina, Ecuador, Spain, or Italy."
+                   data-es="Entrenamos a tu equipo para filmar con la dirección y configuración correcta usando un iPhone 14 Pro o más reciente. Nos encargamos de la dirección, guiones, edición, posproducción, copywriting, hashtags y portadas. También ofrecemos filmación en sitio si estás en Perú, Argentina, Ecuador, España o Italia.">
+                  We train your team to film with the correct direction and settings using an iPhone 14 Pro or newer. We handle direction, scripts, editing, post-production, copywriting, hashtags, and covers. We also offer on-site filming if you are in Peru, Argentina, Ecuador, Spain, or Italy.</p>
               </div>
+            </div>
           </div>
 
-          <h5 class="text-center text-black">Getting Started From Zero</h5>
+          <h5 class="text-center text-black" data-en="Getting Started From Zero" data-es="Empezar desde Cero">Getting Started From Zero</h5>
+
           <div class="accordion-item pb-4">
-             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse9" aria-expanded="false" aria-controls="flush-collapse9">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse9"
+                      data-en="What if I'm starting from zero?" data-es="¿Qué pasa si estoy empezando desde cero?">
                 What if I'm starting from zero?
               </button>
-              </h2>
-              <div id="flush-collapse9" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                  <p>
-                   No problem. We guide you through strategy, branding, structure, UX, content, and video direction so everything launches aligned.
-                  </p>
-                </div>
+            </h2>
+            <div id="flush-collapse9" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                <p data-en="No problem. We guide you through strategy, branding, structure, UX, content, and video direction so everything launches aligned."
+                   data-es="Sin problema. Te guiamos a través de estrategia, branding, estructura, UX, contenido y dirección de video para que todo se lance de manera alineada.">
+                  No problem. We guide you through strategy, branding, structure, UX, content, and video direction so everything launches aligned.</p>
               </div>
+            </div>
           </div>
+
           <div class="accordion-item pb-4">
-             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse10" aria-expanded="false" aria-controls="flush-collapse10">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse10"
+                      data-en="Can I start with just a logo?" data-es="¿Puedo empezar solo con un logo?">
                 Can I start with just a logo?
               </button>
             </h2>
             <div id="flush-collapse10" class="accordion-collapse collapse">
               <div class="accordion-body">
-                <p>
-                  Absolutely. Still, we recommend creating the core identity—logo, typography, and color palette—to ensure long-term consistency.
-                </p>
+                <p data-en="Absolutely. Still, we recommend creating the core identity—logo, typography, and color palette—to ensure long-term consistency."
+                   data-es="Por supuesto. Aún así, recomendamos crear la identidad central: logo, tipografía y paleta de colores, para garantizar la coherencia a largo plazo.">
+                  Absolutely. Still, we recommend creating the core identity—logo, typography, and color palette—to ensure long-term consistency.</p>
               </div>
             </div>
           </div>
+
           <div class="accordion-item pb-4">
-             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse11" aria-expanded="false" aria-controls="flush-collapse11">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse11"
+                      data-en="Can I start with Google Ads to get leads?" data-es="¿Puedo empezar con Google Ads para conseguir leads?">
                 Can I start with Google Ads to get leads?
               </button>
-              </h2>
-              <div id="flush-collapse11" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                  <p>
-                    Yes. Although we recommend combining Google Ads + Meta Ads for optimal performance.
-                  </p>
-                </div>
+            </h2>
+            <div id="flush-collapse11" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                <p data-en="Yes. Although we recommend combining Google Ads + Meta Ads for optimal performance."
+                   data-es="Sí. Aunque recomendamos combinar Google Ads + Meta Ads para un rendimiento óptimo.">
+                  Yes. Although we recommend combining Google Ads + Meta Ads for optimal performance.</p>
               </div>
+            </div>
           </div>
 
-          <h5 class="text-center text-black">Working With Existing Assets</h5>
+          <h5 class="text-center text-black" data-en="Working With Existing Assets" data-es="Trabajar con Activos Existentes">Working With Existing Assets</h5>
+
           <div class="accordion-item pb-4">
-             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse12" aria-expanded="false" aria-controls="flush-collapse12">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse12"
+                      data-en="What if I already have branding or a website?" data-es="¿Qué pasa si ya tengo branding o un sitio web?">
                 What if I already have branding or a website?
               </button>
-              </h2>
-              <div id="flush-collapse12" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                  <p>
-                   We can work with what you have. If it's solid, we build on top of it; if it needs restructuring, we recommend only what's necessary to avoid long-term issues.
-                  </p>
-                </div>
+            </h2>
+            <div id="flush-collapse12" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                <p data-en="We can work with what you have. If it's solid, we build on top of it; if it needs restructuring, we recommend only what's necessary to avoid long-term issues."
+                   data-es="Podemos trabajar con lo que ya tenés. Si es sólido, construimos sobre ello; si necesita reestructuración, solo recomendamos lo necesario para evitar problemas a largo plazo.">
+                  We can work with what you have. If it's solid, we build on top of it; if it needs restructuring, we recommend only what's necessary to avoid long-term issues.</p>
               </div>
+            </div>
           </div>
 
-          <h5 class="text-center text-black">Revisions & Adjustments</h5>
+          <h5 class="text-center text-black" data-en="Revisions & Adjustments" data-es="Revisiones y Ajustes">Revisions & Adjustments</h5>
+
           <div class="accordion-item pb-4">
-             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse13" aria-expanded="false" aria-controls="flush-collapse13">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse13"
+                      data-en="Can I request changes throughout the process?" data-es="¿Puedo solicitar cambios durante el proceso?">
                 Can I request changes throughout the process?
               </button>
-              </h2>
-              <div id="flush-collapse13" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                  <p>
-                   Yes. Each service includes revision rounds. Small adjustments are quick; larger changes are reviewed to keep quality and timing consistent.
-                  </p>
-                </div>
+            </h2>
+            <div id="flush-collapse13" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                <p data-en="Yes. Each service includes revision rounds. Small adjustments are quick; larger changes are reviewed to keep quality and timing consistent."
+                   data-es="Sí. Cada servicio incluye rondas de revisión. Los ajustes pequeños son rápidos; los cambios más grandes se revisan para mantener la calidad y los plazos.">
+                  Yes. Each service includes revision rounds. Small adjustments are quick; larger changes are reviewed to keep quality and timing consistent.</p>
               </div>
+            </div>
           </div>
 
-          <h5 class="text-center text-black">Communication & Project Management</h5>
+          <h5 class="text-center text-black" data-en="Communication & Project Management" data-es="Comunicación y Gestión del Proyecto">Communication & Project Management</h5>
+
           <div class="accordion-item pb-4">
-             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse14" aria-expanded="false" aria-controls="flush-collapse14">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse14"
+                      data-en="How do we communicate during the project?" data-es="¿Cómo nos comunicamos durante el proyecto?">
                 How do we communicate during the project?
               </button>
-              </h2>
-              <div id="flush-collapse14" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                  <p>
-                   We work with organized folders, previews, and weekly check-ins so you always know what's being built and what comes next.
-                  </p>
-                </div>
+            </h2>
+            <div id="flush-collapse14" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                <p data-en="We work with organized folders, previews, and weekly check-ins so you always know what's being built and what comes next."
+                   data-es="Trabajamos con carpetas organizadas, vistas previas y revisiones semanales para que siempre sepas qué se está construyendo y qué sigue.">
+                  We work with organized folders, previews, and weekly check-ins so you always know what's being built and what comes next.</p>
               </div>
+            </div>
           </div>
 
-          <h5 class="text-center text-black">Onboarding & Service Selection</h5>
+          <h5 class="text-center text-black" data-en="Onboarding & Service Selection" data-es="Onboarding y Selección de Servicios">Onboarding & Service Selection</h5>
+
           <div class="accordion-item pb-4">
-             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse15" aria-expanded="false" aria-controls="flush-collapse15">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse15"
+                      data-en="How does the hiring process work?" data-es="¿Cómo funciona el proceso de contratación?">
                 How does the hiring process work?
               </button>
-              </h2>
-              <div id="flush-collapse15" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                  <p>
-                   We start by scheduling a meeting in English or Spanish. This helps us understand exactly what you need. Then we create a Version 1.0 proposal that can be fully modified to fit your goals.
-                  </p>
-                </div>
+            </h2>
+            <div id="flush-collapse15" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                <p data-en="We start by scheduling a meeting in English or Spanish. This helps us understand exactly what you need. Then we create a Version 1.0 proposal that can be fully modified to fit your goals."
+                   data-es="Comenzamos agendando una reunión en inglés o español. Esto nos ayuda a entender exactamente lo que necesitás. Luego creamos una propuesta Versión 1.0 que puede modificarse completamente para adaptarse a tus objetivos.">
+                  We start by scheduling a meeting in English or Spanish. This helps us understand exactly what you need. Then we create a Version 1.0 proposal that can be fully modified to fit your goals.</p>
               </div>
-          </div>
-          <div class="accordion-item pb-4">
-             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse16" aria-expanded="false" aria-controls="flush-collapse16">
-                Do I need to hire all the services?
-              </button>
-              </h2>
-              <div id="flush-collapse16" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                  <p>
-                   No. When you click "Contact Us," you'll see options to choose the specific service you're interested in.
-                  </p>
-                </div>
-              </div>
+            </div>
           </div>
 
+          <div class="accordion-item pb-4">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse16"
+                      data-en="Do I need to hire all the services?" data-es="¿Necesito contratar todos los servicios?">
+                Do I need to hire all the services?
+              </button>
+            </h2>
+            <div id="flush-collapse16" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                <p data-en='No. When you click "Contact Us," you\'ll see options to choose the specific service you\'re interested in.'
+                   data-es='No. Al hacer clic en "Contáctanos", verás opciones para elegir el servicio específico que te interesa.'>
+                  No. When you click "Contact Us," you'll see options to choose the specific service you're interested in.</p>
+              </div>
+            </div>
+          </div>
 
         </div>
       </div>
+    </div>
   </div>
 </div>
+
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
 <!-- Custom JS -->
 <script src="js/main.js"></script>
 

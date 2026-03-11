@@ -13,6 +13,53 @@ window.addEventListener('scroll', function(){
     }
 })
 
+// ── LANGUAGE SWITCH ─────────────────────────────────────────────────
+const langOptions = document.querySelectorAll('.lang-option');
+const categorySpan = document.querySelector('.carousel-category');
+let currentLang = 'en';
+
+function applyLanguage(lang) {
+  // Textos normales
+  document.querySelectorAll('[data-en]').forEach(el => {
+    el.textContent = el.dataset[lang];
+  });
+
+  // Placeholders del formulario
+  document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+    el.placeholder = lang === 'en' ? el.dataset.enPlaceholder : el.dataset.esPlaceholder;
+  });
+
+  // Categoría del carousel Bootstrap (sincronizar con slide activo)
+  const activeSlide = document.querySelector('.carousel-item.active');
+  if (activeSlide) {
+    categorySpan.textContent = activeSlide.dataset[`category${lang.charAt(0).toUpperCase() + lang.slice(1)}`];
+  }
+
+  // Estado visual del switch
+  langOptions.forEach(opt => opt.classList.toggle('active', opt.dataset.lang === lang));
+
+  currentLang = lang;
+}
+
+langOptions.forEach(opt => {
+  opt.addEventListener('click', () => {
+    if (opt.dataset.lang !== currentLang) applyLanguage(opt.dataset.lang);
+  });
+});
+
+// Actualizar categoría del carousel al cambiar slide
+document.getElementById('servicesCarousel')?.addEventListener('slid.bs.carousel', function(event) {
+  const newSlide = event.relatedTarget;
+  const key = `category${currentLang.charAt(0).toUpperCase() + currentLang.slice(1)}`;
+  categorySpan.style.opacity = '0';
+  setTimeout(() => {
+    categorySpan.textContent = newSlide.dataset[key];
+    categorySpan.style.transition = 'opacity 0.3s ease';
+    categorySpan.style.opacity = '1';
+  }, 150);
+});
+
+
 const navbar = document.querySelector('.navbar');
 const logo = document.querySelector('.navbar-logo');
 
@@ -46,6 +93,17 @@ document.querySelectorAll('#nav .nav-link, #nav .btn').forEach(el => {
       const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
       if (bsCollapse) bsCollapse.hide();
     }
+  });
+});
+
+// Forzar autoplay en iOS para todos los videos
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('video[autoplay]').forEach(video => {
+    video.muted = true;
+    video.play().catch(() => {
+      // Si falla, intentar al primer toque del usuario
+      document.addEventListener('touchstart', () => video.play(), { once: true });
+    });
   });
 });
 
@@ -159,7 +217,7 @@ window.onscroll = function() {
 };
 
 
-const carousel = document.getElementById("servicesCarousel")
+/* const carousel = document.getElementById("servicesCarousel")
 const categorySpan = document.querySelector(".carousel-category")
 
 carousel.addEventListener("slid.bs.carousel", function (event) {
@@ -174,24 +232,28 @@ carousel.addEventListener("slid.bs.carousel", function (event) {
   }, 150);
 
 })
-
+ */
 /***************Carousel with dots and captions below *********************************************/
 const slides = [
     {
       img: './multimedia/img/slide4.png',
-      caption: 'Targeted Reach'
+      caption: 'Targeted Reach',
+      captionEs: 'Alcance Dirigido'
     },
     {
       img: './multimedia/img/slide5.png',
-      caption: 'Smart Growth'
+      caption: 'Smart Growth',
+      captionEs: 'Crecimiento Inteligente'
     },
     {
       img: './multimedia/img/slide6.png',
-      caption: 'Optimized Performance + AI'
+      caption: 'Optimized Performance + AI',
+      captionEs: 'Rendimiento Optimizado + IA'
     },
     {
       img: './multimedia/img/slide7.png',
-      caption: 'Human Precision'
+      caption: 'Human Precision',
+      captionEs: 'Precisión Humana'
     },
   ];
 
@@ -217,7 +279,7 @@ const slides = [
     slide.innerHTML = `
       <div class="slide-inner">
         <img src="${s.img}" alt="${s.caption}" loading="lazy" />
-        <p class="slide-caption">${s.caption}</p>
+        <p class="slide-caption" data-en="${s.caption}" data-es="${s.captionEs}">${s.caption}</p>
       </div>`;
     track.appendChild(slide);
   });
@@ -327,3 +389,55 @@ const slides = [
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => updateTrack(), 100);
   });
+
+const video1 = document.getElementById("video1");
+const fadeDuration1 = 0.7;
+let fading1 = false;
+
+video1.addEventListener("loadeddata", () => {
+    video1.style.opacity = 1;
+});
+
+video1.addEventListener("timeupdate", () => {
+
+  if(!fading1 && video1.currentTime >= video1.duration - fadeDuration1){
+
+      fading1 = true;
+
+      video1.style.opacity = 0;
+
+      setTimeout(()=>{
+          video1.currentTime = 0;
+          video1.play();
+          video1.style.opacity = 1;
+          fading1 = false;
+      }, fadeDuration1 * 1000);
+  }
+
+});
+
+const videosm = document.getElementById("video-sm");
+const fadeDurationsm = 0.7;
+let fadingsm = false;
+
+videosm.addEventListener("loadeddata", () => {
+    videosm.style.opacity = 1;
+});
+
+videosm.addEventListener("timeupdate", () => {
+
+  if(!fadingsm && videosm.currentTime >= videosm.duration - fadeDurationsm){
+
+      fadingsm = true;
+
+      videosm.style.opacity = 0;
+
+      setTimeout(()=>{
+          videosm.currentTime = 0;
+          videosm.play();
+          videosm.style.opacity = 1;
+          fadingsm = false;
+      }, fadeDurationsm * 1000);
+  }
+
+});

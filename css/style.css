@@ -1,6 +1,32 @@
 html {
   scroll-behavior: smooth;
 }
+/**********Switch languaje************************/
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 8px;
+}
+.lang-option {
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: grey;
+  transition: color 0.2s ease;
+  letter-spacing: 0.05em;
+}
+.lang-option.active { 
+  color: black; 
+}
+.lang-divider { 
+  color: grey; font-size: 0.85rem; 
+}
+.scrolled .lang-option.active { 
+  color: black; 
+}
+
+/**********fin Switch languaje********************/
 body {
     font-family: 'Nunito', sans-serif;
 }
@@ -123,6 +149,18 @@ body {
 .ratio-container {
     border-radius: 50px; 
     overflow: hidden;  
+}
+
+#video1 {
+    opacity: 1;
+    transition: opacity 1s ease-in;
+    z-index:0;
+}
+
+#video-sm {
+    opacity: 1;
+    transition: opacity 1s ease-in;
+    z-index:0;
 }
 
 .btnplaycustom {
@@ -797,8 +835,8 @@ footer {
     }
     
     .btn-custom1 {
-        
-        border-radius: 10px;
+        padding: 10px 20px !important;
+        border-radius: 30px !important;
     }
 
     }
@@ -814,6 +852,13 @@ footer {
         transform: scale(0.92);
         opacity: 0.5;
     }
+    }
+
+    @media (max-width: 991px) {
+      .lang-switch {
+        margin-left: 0;
+        margin-top: 8px;
+      }
     }
 
     @media (min-width: 992px) {
