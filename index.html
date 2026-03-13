@@ -70,7 +70,7 @@
            data-es="Juntos, creando el camino hacia campañas perfectas.">
           Togheter, creating the path to perfect campaigns.
         </p>
-        <a href="#contactForm" class="btn btn-custom"
+        <a href="#contact" class="btn btn-custom"
            data-en="Contact Us" data-es="Contáctanos">Contact Us</a>
         <p class="mt-1 fs-6 fw-lighter p-custom" style="color: white;"
            data-en="From $850" data-es="Desde $850">From $850</p>
@@ -469,8 +469,15 @@
       <div class="col-md-4">
         <form id="contactForm" novalidate>
           <div class="row reveal">
+             <!-- NOMBRE -->
+            <div class="col-md-12 pb-4">
+              <input type="text" name="name" id="nameInput" class="form-control"
+                    data-en-placeholder="Name" data-es-placeholder="Nombre"
+                    placeholder="Name" required>
+              <div class="invalid-feedback" data-en="Name must contain only letters." data-es="El nombre solo puede contener letras.">Name must contain only letters.</div>
+            </div>
 
-            <!-- PAÍS primero -->
+            <!-- PAÍS -->
             <div class="col-md-12 pb-4">
               <select id="inputState" class="form-select" name="country" required>
                 <option value="" disabled selected data-en="Country" data-es="País">Country</option>
@@ -495,14 +502,6 @@
                   data-es="Número inválido para el país seleccionado.">
                 Invalid phone number for selected country.
               </div>
-            </div>
-
-            <!-- NOMBRE -->
-            <div class="col-md-12 pb-4">
-              <input type="text" name="name" id="nameInput" class="form-control"
-                    data-en-placeholder="Name" data-es-placeholder="Nombre"
-                    placeholder="Name" required>
-              <div class="invalid-feedback" data-en="Name must contain only letters." data-es="El nombre solo puede contener letras.">Name must contain only letters.</div>
             </div>
 
             <!-- EMAIL -->

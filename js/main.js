@@ -473,7 +473,7 @@ const phoneConfig = {
   },
   'Argentina': {
     flag: '🇦🇷',
-    prefix: '+54',
+    prefix: '+54 9',
     mask: '(000) 000-0000',
     placeholder: '(___) ___-____'
   },
