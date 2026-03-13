@@ -680,7 +680,23 @@ footer {
       box-shadow: none;
       border-color: #ced4da;
     }
+    .phone-input-group .phone-prefix {
+      min-width: 90px;
+      justify-content: center;
+      font-size: 0.95rem;
+      background: transparent;
+      border-right: none;
+      letter-spacing: 0.02em;
+    }
 
+    .phone-input-group .form-control {
+      border-left: none;
+    }
+
+    .phone-input-group .form-control:focus {
+      border-color: #ced4da;
+      box-shadow: none;
+    }
 /************************* Media Queries for Responsiveness *************************/
 :root {
   --slide-width: 55%;

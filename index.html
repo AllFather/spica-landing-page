@@ -9,7 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
-
+  <!-- IMask -->
+  <script src="https://cdn.jsdelivr.net/npm/imask@7.6.0/dist/imask.min.js"></script>
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
@@ -474,21 +475,26 @@
               <select id="inputState" class="form-select" name="country" required>
                 <option value="" disabled selected data-en="Country" data-es="País">Country</option>
                 <option value="Argentina">Argentina</option>
-                <option value="Peru">Perú</option>
-                <option value="USA">United States</option>
+                <option value="Perú">Perú</option>
+                <option value="United States">United States</option>
               </select>
               <div class="invalid-feedback" data-en="Please select a country." data-es="Por favor seleccioná un país.">Please select a country.</div>
             </div>
 
             <!-- TELÉFONO con prefijo dinámico -->
             <div class="col-md-12 pb-4">
-              <div class="input-group">
-                <span class="input-group-text" id="phonePrefix">+</span>
+              <div class="input-group phone-input-group">
+                <span class="input-group-text phone-prefix" id="phonePrefix">🇺🇸 +1</span>
                 <input type="tel" name="phone" id="phoneInput" class="form-control"
-                      data-en-placeholder="Phone number" data-es-placeholder="Teléfono"
-                      placeholder="Phone number" required>
+                      data-en-placeholder="(000) 000-0000"
+                      data-es-placeholder="(000) 000-0000"
+                      placeholder="(000) 000-0000" required>
               </div>
-              <div class="invalid-feedback" id="phoneError" data-en="Invalid phone number for selected country." data-es="Número inválido para el país seleccionado.">Invalid phone number for selected country.</div>
+              <div class="invalid-feedback" id="phoneError"
+                  data-en="Invalid phone number for selected country."
+                  data-es="Número inválido para el país seleccionado.">
+                Invalid phone number for selected country.
+              </div>
             </div>
 
             <!-- NOMBRE -->

@@ -216,23 +216,6 @@ window.onscroll = function() {
   }
 };
 
-
-/* const carousel = document.getElementById("servicesCarousel")
-const categorySpan = document.querySelector(".carousel-category")
-
-carousel.addEventListener("slid.bs.carousel", function (event) {
-  const newCategory = event.relatedTarget.dataset.category;
-
-  // Fade suave del texto
-  categorySpan.style.opacity = "0";
-  setTimeout(() => {
-    categorySpan.textContent = newCategory;
-    categorySpan.style.transition = "opacity 0.3s ease";
-    categorySpan.style.opacity = "1";
-  }, 150);
-
-})
- */
 /***************Carousel with dots and captions below *********************************************/
 const slides = [
     {
@@ -444,7 +427,7 @@ videosm.addEventListener("timeupdate", () => {
 
 // ── FORM VALIDATION & SUBMIT ─────────────────────────────────────────
 
-const phoneConfig = {
+/* const phoneConfig = {
   Argentina: {
     prefix: '+54 9',
     placeholder: 'XXX XXXXXXX',
@@ -478,7 +461,78 @@ countrySelect.addEventListener('change', () => {
     phoneInput.value        = '';
     phoneInput.removeAttribute('disabled');
   }
+}); */
+
+// Configuración por país: prefijo, máscara, placeholder
+const phoneConfig = {
+  'United States': {
+    flag: '🇺🇸',
+    prefix: '+1',
+    mask: '(000) 000-0000',
+    placeholder: '(___) ___-_____'
+  },
+  'Argentina': {
+    flag: '🇦🇷',
+    prefix: '+54',
+    mask: '(000) 000-0000',
+    placeholder: '(___) ___-____'
+  },
+  'Perú': {
+    flag: '🇵🇪',
+    prefix: '+51',
+    mask: '000 000 000',
+    placeholder: '___ ___-___'
+  }
+};
+
+const countrySelect = document.getElementById('inputState');
+const phoneInput    = document.getElementById('phoneInput');
+const phonePrefix   = document.getElementById('phonePrefix');
+
+let phoneMask = null;
+
+function applyPhoneMask(country) {
+  const config = phoneConfig[country];
+  if (!config) return;
+
+  // Actualizar prefijo visible
+  phonePrefix.textContent = `${config.flag} ${config.prefix}`;
+
+  // Limpiar el input
+  phoneInput.value = '';
+
+  // Actualizar placeholder
+  phoneInput.placeholder = config.placeholder;
+
+  // Destruir máscara anterior si existe
+  if (phoneMask) phoneMask.destroy();
+
+  // Aplicar nueva máscara
+  phoneMask = IMask(phoneInput, {
+    mask: config.mask,
+    lazy: false,        // muestra el placeholder de máscara
+    placeholderChar: '0'
+  });
+}
+
+// Escuchar cambio de país
+countrySelect.addEventListener('change', () => {
+  const selected = countrySelect.value;
+  if (phoneConfig[selected]) {
+    applyPhoneMask(selected);
+  } else {
+    // País no configurado: limpiar prefijo y máscara
+    phonePrefix.textContent = '+';
+    phoneInput.value = '';
+    phoneInput.placeholder = 'Phone number';
+    if (phoneMask) { phoneMask.destroy(); phoneMask = null; }
+  }
 });
+
+// Aplicar máscara inicial si hay país seleccionado
+if (countrySelect.value && countrySelect.value !== 'Country') {
+  applyPhoneMask(countrySelect.value);
+}
 
 // Validar nombre: solo letras y espacios
 document.getElementById('nameInput').addEventListener('input', function () {
@@ -569,3 +623,4 @@ document.getElementById('contactForm').addEventListener('submit', async function
     console.error('Error sending form:', err);
   }
 });
+
