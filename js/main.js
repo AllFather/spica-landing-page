@@ -146,45 +146,83 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// ── VIDEO 1 FADE LOOP ─────────────────────────────────────────────────
-const video1       = document.getElementById('video1');
-const fadeDuration1 = 0.7;
-let fading1         = false;
+// ── VIDEO 1 CROSSFADE ─────────────────────────────────────────────────
+const vid1A = document.getElementById('video1-a');
+const vid1B = document.getElementById('video1-b');
 
-if (video1) {
-  video1.addEventListener('loadeddata', () => { video1.style.opacity = 1; });
-  video1.addEventListener('timeupdate', () => {
-    if (!fading1 && video1.currentTime >= video1.duration - fadeDuration1) {
-      fading1 = true;
-      video1.style.opacity = 0;
-      setTimeout(() => {
-        video1.currentTime = 0;
-        video1.play();
-        video1.style.opacity = 1;
-        fading1 = false;
-      }, fadeDuration1 * 1000);
-    }
+if (vid1A && vid1B) {
+  let current1  = vid1A;
+  let next1     = vid1B;
+  let swapping1 = false;
+
+  vid1A.load();
+  vid1B.load();
+
+  vid1A.addEventListener('canplaythrough', () => { vid1A.play(); });
+
+  function doSwap1() {
+    swapping1 = true;
+    next1.currentTime = 0;
+    next1.play();
+    next1.classList.add('active');
+    current1.classList.remove('active');
+    const outgoing = current1;
+    [current1, next1] = [next1, current1];
+    setTimeout(() => {
+      outgoing.pause();
+      outgoing.currentTime = 0;
+      swapping1 = false;
+    }, 1500);
+  }
+
+  vid1A.addEventListener('timeupdate', () => {
+    if (current1 !== vid1A || swapping1) return;
+    if (vid1A.duration && vid1A.currentTime >= vid1A.duration - 2) doSwap1();
+  });
+
+  vid1B.addEventListener('timeupdate', () => {
+    if (current1 !== vid1B || swapping1) return;
+    if (vid1B.duration && vid1B.currentTime >= vid1B.duration - 2) doSwap1();
   });
 }
 
-// ── VIDEO SM FADE LOOP ────────────────────────────────────────────────
-const videosm        = document.getElementById('video-sm');
-const fadeDurationsm = 0.7;
-let fadingsm         = false;
+// ── VIDEO SM CROSSFADE ────────────────────────────────────────────────
+const vidSmA = document.getElementById('videosm-a');
+const vidSmB = document.getElementById('videosm-b');
 
-if (videosm) {
-  videosm.addEventListener('loadeddata', () => { videosm.style.opacity = 1; });
-  videosm.addEventListener('timeupdate', () => {
-    if (!fadingsm && videosm.currentTime >= videosm.duration - fadeDurationsm) {
-      fadingsm = true;
-      videosm.style.opacity = 0;
-      setTimeout(() => {
-        videosm.currentTime = 0;
-        videosm.play();
-        videosm.style.opacity = 1;
-        fadingsm = false;
-      }, fadeDurationsm * 1000);
-    }
+if (vidSmA && vidSmB) {
+  let currentSm  = vidSmA;
+  let nextSm     = vidSmB;
+  let swappingSm = false;
+
+  vidSmA.load();
+  vidSmB.load();
+
+  vidSmA.addEventListener('canplaythrough', () => { vidSmA.play(); });
+
+  function doSwapSm() {
+    swappingSm = true;
+    nextSm.currentTime = 0;
+    nextSm.play();
+    nextSm.classList.add('active');
+    currentSm.classList.remove('active');
+    const outgoing = currentSm;
+    [currentSm, nextSm] = [nextSm, currentSm];
+    setTimeout(() => {
+      outgoing.pause();
+      outgoing.currentTime = 0;
+      swappingSm = false;
+    }, 1200);
+  }
+
+  vidSmA.addEventListener('timeupdate', () => {
+    if (currentSm !== vidSmA || swappingSm) return;
+    if (vidSmA.duration && vidSmA.currentTime >= vidSmA.duration - 1) doSwapSm();
+  });
+
+  vidSmB.addEventListener('timeupdate', () => {
+    if (currentSm !== vidSmB || swappingSm) return;
+    if (vidSmB.duration && vidSmB.currentTime >= vidSmB.duration - 1) doSwapSm();
   });
 }
 

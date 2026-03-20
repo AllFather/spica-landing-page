@@ -168,18 +168,25 @@ body {
 .ratio-container {
     border-radius: 50px; 
     overflow: hidden;  
+     background-color: black;
 }
 
-#video1 {
-    opacity: 1;
-    transition: opacity 1s ease-in;
-    z-index:0;
+.vid-crossfade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
 }
 
-#video-sm {
-    opacity: 1;
-    transition: opacity 1s ease-in;
-    z-index:0;
+.vid-crossfade.active {
+  opacity: 1;
+}
+
+#videosm-a, #videosm-b {
+  transition: opacity 0.5s ease-in-out;
 }
 
 .btnplaycustom {
@@ -820,7 +827,7 @@ footer {
     }
 
     /* En desktop volvemos al layout vertical centrado */
-    @media (min-width: 769px) {
+  @media (min-width: 769px) {
     .service-item {
         flex-direction: column;
         align-items: center;
@@ -848,37 +855,43 @@ footer {
     }
 
     .carousel-top-caption {
-        top: 1.5rem;
-        padding: 10px 12px;
-        gap: 12px;
-    }
+    top: 1rem;
+    padding: 8px 12px;
+    gap: 10px;
+    white-space: nowrap; /* ← evita el salto de línea */
+    max-width: 90vw;
+  }
 
     .carousel-category {
-        font-size: 0.7rem;
+      font-size: 0.80rem; /* ← más pequeño para que entre en una línea */
     }
 
     .nav-btn {
         font-size: 14px;
     }
 
+    .carousel-caption {
+    bottom: 0;
+    padding-bottom: 60px; /* ← espacio suficiente desde abajo */
+    left: 0;
+    right: 0;
+    }
+
     .custom-caption {
-        font-size: 1.8rem;
-        margin-bottom: 8px;
+      font-size: 1.25rem;
+      margin-bottom: 6px;
+    }
+
+    .custom-carousel .carousel-item img {
+    height: 60vh;
+    object-fit: cover;
     }
 
     .caption-p {
-        font-size: 0.85rem;
-        padding-bottom: 20px;
-        max-width: 80%;
-        padding-left: 12px;
-        padding-right: 12px;
-    }
-
-    .carousel-caption {
-        bottom: 0;
-        padding-bottom: 12px;
-        left: 0;
-        right: 0;
+      font-size: 0.75rem;
+      padding-bottom: 0;
+      max-width: 90%;
+      margin: 0 auto;
     }
 
     .video-preview2, .video-preview {
