@@ -867,6 +867,8 @@ footer {
     .custom-carousel .carousel-item img {
     height: 60vh;
     object-fit: cover;
+    object-position: 40% 10%;
+
     }
 
     .caption-p {
