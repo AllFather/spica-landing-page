@@ -168,25 +168,7 @@ body {
 .ratio-container {
     border-radius: 50px; 
     overflow: hidden;  
-     background-color: black;
-}
-
-.vid-crossfade {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1.5s ease-in-out;
-}
-
-.vid-crossfade.active {
-  opacity: 1;
-}
-
-#videosm-a, #videosm-b {
-  transition: opacity 0.5s ease-in-out;
+     
 }
 
 .btnplaycustom {
