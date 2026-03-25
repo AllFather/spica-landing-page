@@ -845,6 +845,7 @@ footer {
     gap: 10px;
     white-space: nowrap; /* ← evita el salto de línea */
     max-width: 90vw;
+    min-width: 30vh;
   }
 
     .carousel-category {
