@@ -211,7 +211,6 @@ body {
 /* caption superior */
 
 .carousel-top-caption{
-
   position:absolute;
   top:3rem;
   left:50%;
@@ -233,6 +232,14 @@ body {
   font-weight:500;
   text-align: center;
   flex: 1; /* ← ocupa el espacio disponible y centra el texto */
+  display: inline-block; /* Importante para que el transform funcione */
+  will-change: transform, opacity, filter; /* Optimiza la animación */
+}
+
+.letra-anim {
+  display: inline-block;
+  transition: all 0.4s ease;
+  will-change: filter, opacity, transform;
 }
 
 .nav-btn{

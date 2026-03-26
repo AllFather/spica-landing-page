@@ -74,16 +74,53 @@ langOptions.forEach(opt => {
   });
 });
 
-document.getElementById('servicesCarousel')?.addEventListener('slid.bs.carousel', function (event) {
+/* document.getElementById('servicesCarousel')?.addEventListener('slid.bs.carousel', function (event) {
   const newSlide = event.relatedTarget;
   const key = `category${currentLang.charAt(0).toUpperCase() + currentLang.slice(1)}`;
+  categorySpan.style.transition = 'none'; 
   categorySpan.style.opacity = '0';
   setTimeout(() => {
     categorySpan.textContent = newSlide.dataset[key];
     categorySpan.style.transition = 'opacity 0.3s ease';
     categorySpan.style.opacity = '1';
+  }, 150); */
+document.getElementById('servicesCarousel')?.addEventListener('slid.bs.carousel', function (event) {
+  const newSlide = event.relatedTarget;
+  const key = `category${currentLang.charAt(0).toUpperCase() + currentLang.slice(1)}`;
+  const nuevoTexto = newSlide.dataset[key];
+
+  // 1. Convertir el texto actual en letras individuales para animarlas
+  categorySpan.innerHTML = categorySpan.textContent.split('').map(l => 
+    `<span class="letra-anim">${l === ' ' ? '&nbsp;' : l}</span>`
+  ).join('');
+
+  // 2. Efecto de salida (desaparecen con blur)
+  const letrasViejas = categorySpan.querySelectorAll('.letra-anim');
+  letrasViejas.forEach((l, i) => {
+    setTimeout(() => {
+      l.style.filter = 'blur(8px)';
+      l.style.opacity = '0';
+      l.style.transform = 'translateX(15px)'; // Pequeño empujón a la derecha
+    }, i * 10); // Delay entre letras para efecto cascada
+  });
+
+  // 3. Cambiar al nuevo texto y animar entrada
+  setTimeout(() => {
+    categorySpan.innerHTML = nuevoTexto.split('').map(l => 
+      `<span class="letra-anim" style="opacity:0; filter:blur(8px); transform:translateX(-15px)">${l === ' ' ? '&nbsp;' : l}</span>`
+    ).join('');
+
+    const letrasNuevas = categorySpan.querySelectorAll('.letra-anim');
+    letrasNuevas.forEach((l, i) => {
+      setTimeout(() => {
+        l.style.filter = 'blur(0px)';
+        l.style.opacity = '1';
+        l.style.transform = 'translateX(0)';
+      }, i * 10);
+    });
   }, 150);
 });
+
 
 // ── HERO VIDEO CROSSFADE ─────────────────────────────────────────────
 const vidA = document.getElementById('hero-video-a');
